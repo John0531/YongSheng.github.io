@@ -107,19 +107,21 @@
             height: 13vh;
             top: -13vh
         }
+        /* .collapse {
+            font-size: 3vh;
+        } */
         
-        .navbar-nav {
-            margin-left: 2vw;
-            margin-right: 2vw;
+        .collapse {
+            background-color: #f2e2cede;
         }
         
         .link {
-            font-size: 1.2vw;
-            margin: 0 1.5vw;
             color: rgb(77, 77, 77);
+            margin: 0 2.3vw;
             text-decoration: none;
-            padding-left: 1vw;
             display: block;
+            white-space: nowrap;
+            font-size: 3vh;
         }
         
         .link:hover {
@@ -127,30 +129,17 @@
         }
         
         .d-flex {
-            margin-left: 1.5vw;
+            margin-left: 2.5vw;
         }
         
         .diet-menu {
-            position: absolute;
-            top: 10vh;
-            left: 25.5vw;
             z-index: 0;
-        }
-        
-        .diet-menu ul {
             background-color: #f2e2cede;
-            width: 12vw;
+            width: 14vw;
             height: 28vh;
             border-radius: 10px;
-            padding-left: 0;
+            padding: 0;
             box-shadow: 0px 0px 10px rgb(70, 69, 69);
-            transform: translateY(-7vh);
-            transition: 1s;
-            opacity: 0;
-        }
-        
-        .diet-menu ul:hover {
-            transform: translateY(0vh);
             opacity: 1;
         }
         
@@ -214,13 +203,12 @@
         
         @media only screen and (max-device-width:1025px) {
             .link {
-                margin: 3vh 0.5vw 0;
+                margin-left: 0.5vw;
                 font-size: 1.7vw;
-                width: 8vw;
-                text-align: center;
+                width: auto;
+                white-space: nowrap;
             }
             .navbar-nav {
-                margin-left: 0vw;
                 margin-right: 0.5vw;
             }
             .d-flex button {
@@ -275,24 +263,22 @@
                         <li class="nav-item">
                             <a class="link active" aria-current="page" href="#">首頁</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="link" href="#">減脂飲食方法</a>
-                            <div class="diet-menu">
-                                <ul class="meun">
-                                    <li>
-                                        <a href="">間歇性斷食</a>
-                                    </li>
-                                    <li>
-                                        <a href="">低醣飲食</a>
-                                    </li>
-                                    <li>
-                                        <a href="">生酮飲食</a>
-                                    </li>
-                                    <li>
-                                        <a href="">碳循環飲食</a>
-                                    </li>
-                                </ul>
-                            </div>
+                        <li class="nav-item dropdown">
+                            <a class="link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">飲食方法</a>
+                            <ul class="diet-menu dropdown-menu">
+                                <li>
+                                    <a href="">間歇性斷食</a>
+                                </li>
+                                <li>
+                                    <a href="">低醣飲食</a>
+                                </li>
+                                <li>
+                                    <a href="">生酮飲食</a>
+                                </li>
+                                <li>
+                                    <a href="">碳循環飲食</a>
+                                </li>
+                            </ul>
                         </li>
                         <li class="nav-item">
                             <a class="link" href="#">營養素</a>
@@ -347,6 +333,11 @@
             $(".navbar").animate({
                 top: "0"
             }, 1500)
+            $(".dropdown-toggle").click(function() {
+                $(".diet-menu").animate({
+                    transform: "translateY(0)"
+                })
+            })
         });
     </script>
 
@@ -427,6 +418,15 @@
             }
             .wrap-1 .nav-link {
                 width: 14vw;
+            }
+        }
+        
+        @media only screen and (max-device-width:769px) {
+            .wrap-1 .con img {
+                height: 20vh;
+            }
+            .wrap-1 {
+                height: 40vh;
             }
         }
     </style>
@@ -580,6 +580,8 @@
             } */
         }
         
+        @media only screen and (max-device-width:769px) {}
+        
         .wrap .item h3 {
             color: rgb(255, 214, 32);
             margin-bottom: 4px;
@@ -710,6 +712,15 @@
             }
         }
         
+        @media only screen and (max-device-width:769px) {
+            .my-card-img {
+                height: 25vh;
+            }
+            .wrap1 {
+                height: 120vh;
+            }
+        }
+        
         .wrap1 a:hover .card-body {
             background-image: linear-gradient(45deg, #e9b480, #dbac81);
             color: #fff;
@@ -729,7 +740,7 @@
         <h1>最新熱門食譜分享</h1>
         <div class="container">
             <div class="row">
-                <div class="col-12 col-md-3 item1">
+                <div class="col-12 col-md-6 col-lg-3 item1">
                     <a href="">
                         <img src="images/食譜4.jpg" class=" my-card-img" alt="...">
                         <div class="card-body">
@@ -740,7 +751,7 @@
                         </div>
                     </a>
                 </div>
-                <div class="col-12 col-md-3">
+                <div class="col-12 col-md-6 col-lg-3">
                     <a href="">
                         <img src="images/食譜1.jpg" class="img-fluid rounded-start my-card-img " alt="...">
                         <div class="card-body">
@@ -750,7 +761,7 @@
                         </div>
                     </a>
                 </div>
-                <div class="col-12 col-md-3 item1">
+                <div class="col-12 col-md-6 col-lg-3 item1">
                     <a href="">
                         <img src="images/食譜2.jpg" class="img-fluid rounded-start my-card-img" alt="...">
                         <div class="card-body">
@@ -760,7 +771,7 @@
                         </div>
                     </a>
                 </div>
-                <div class="col-12 col-md-3">
+                <div class="col-12 col-md-6 col-lg-3">
                     <a href="">
                         <img src="images/食譜3.jpg" class="img-fluid rounded-start my-card-img" alt="...">
                         <div class="card-body">
