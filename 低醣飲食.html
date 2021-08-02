@@ -1,0 +1,224 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+
+
+    <title>Hello, world!</title>
+    <script src="https://unpkg.com/vue@next"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            font-family: 'Noto Sans TC', sans-serif;
+        }
+        
+        .banner {
+            width: 100%;
+            height: 80vh;
+            object-fit: cover;
+        }
+        
+        .wrap2 {
+            background-image: url(../YongSheng.github.io/images/背景紋理2.jpg);
+        }
+        
+        .arrow {
+            background-color: transparent;
+            font-size: 4vw;
+            border: none;
+            color: rgb(122, 202, 255);
+            text-shadow: 0 0 15px rgb(78, 190, 255);
+        }
+        
+        .selecter {
+            display: flex;
+            justify-content: center;
+            padding: 5vh 0;
+        }
+        
+        .number {
+            background-color: rgb(255, 227, 149);
+            font-size: 3.5vw;
+            border-radius: 20px 0 0 20px;
+            display: inline-block;
+            width: 5vw;
+            color: rgb(122, 202, 255);
+            text-shadow: 2px 2px 2px rgb(37, 76, 102);
+        }
+        
+        .type {
+            background-color: rgb(149, 213, 255);
+            font-size: 3.5vw;
+            border-radius: 0 20px 20px 0;
+            display: inline-block;
+            width: 30vw;
+        }
+        
+        .menu {
+            width: 50vw;
+            text-align: center;
+            margin-top: 1vh;
+        }
+        
+        .menu a {
+            text-decoration: none;
+            color: rgb(255, 232, 162);
+            text-shadow: 2px 2px 2px rgb(114, 100, 58);
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <div id="app">
+        <div class="wrap">
+            <img :src="src" alt="" class="banner">
+        </div>
+        <div class="wrap2">
+            <div class="selecter">
+                <button type="button" class="arrow" @click="changeIndex(-1)"><i class="bi bi-caret-left-fill"></i></button>
+                <div class="menu">
+                    <span class="number">
+                        {{index+1}}
+                    </span>
+                    <span class="type">
+                        <a href="">{{option[index].title}}</a>
+                    </span>
+                </div>
+                <button type="button" class="arrow" @click="changeIndex(1)"><i class="bi bi-caret-right-fill"></i></button>
+            </div>
+            <div class="container">
+                <h1>{{what.title}}</h1>
+                <p v-html="what.content"></p>
+                <h1>{{why.title}}</h1>
+                <p v-html="why.content"></p>
+                <h1>{{how.title}}</h1>
+                <p v-html="how.content"></p>
+            </div>
+        </div>
+    </div>
+
+
+
+    <script>
+        Vue.createApp({
+            data: function() {
+                return {
+                    src: "../YongSheng.github.io/images/斷食banner.jpg",
+                    index: 0,
+                    option: [{
+                        title: "間歇性斷食",
+                        link: "js"
+                    }, {
+                        title: "低醣飲食",
+                        link: "js"
+                    }, {
+                        title: "生酮飲食",
+                        link: "js"
+                    }, {
+                        title: "碳循環飲食",
+                        link: "js"
+                    }],
+                    what: {
+                        title: "WHAT",
+                        content: `這種飲食方式大概是20年前開始興起的，研究後發現對身體有非常多的好處，所以近年來越來越受歡迎<br>
+                        一般來說吃完一餐後， 身體需要7 - 10 小時來消耗掉儲存的肝糖<br>
+                        等於說7 - 10 小時後身體才會大量使用身體內的脂肪， 所以一天三餐的話只有睡覺時會有機會燃燒脂肪`,
+                    },
+                    why: {
+                        title: "WHY",
+                        content: ` "跳過一餐不吃，其實是讓身體有時間修復" <br>
+                        <br>
+                        普通人可以利用這種飲食來讓身體更健康， 也可維持身材， 健身的也會利用間接性斷食來減脂<br>
+                        <b>優點</b><br>
+                        大致上把優點分成七種<br>
+                        一、 血液： 降低胰島素、 降低瘦蛋白<br>
+                        二、 肝臟： 提升胰島素敏感度、 降低類胰島素生長因子、 輔助生酮<br>
+                        三、 胃腸： 降低發炎、 減少能量吸收、 降低細胞增殖<br>
+                        四、 頭腦： 降低發炎、 提升運作能力、 提升神經系統、 提升抗壓力<br>
+                        五、 心臟： 減緩休息時心跳、 降低血壓、 提升抗壓力<br>
+                        六、 脂肪： 促進脂肪分解、 降低發炎、 降低瘦蛋白、 提升脂聯素<br>
+                        七、 肌肉： 提升胰島素敏感度、 提升效率、 降低發炎<br>
+                        <br>
+                        基本上就是減少發炎、 細胞修復、 抗氧化， 然後最重要的就是提升生長激素、 腎上腺素並且降低胰島素， 所以可以讓身體更有效運用脂肪來當主要能量來源。<br>
+                        <br>
+                        <b>缺點</b><br>
+                        初期肚子有時候會餓（ 台灣早餐太好吃， 難以抗拒）。 但是要搞懂到底是真的餓還是只是嘴饞<br>
+                        初期比較沒力氣， 但後期習慣後是會對重訓有幫助的（ 可以看我斷食重訓的影片）<br>
+                        有的時候不想吃晚餐， 但是遇到家人、 朋友邀約吃晚餐（ 沒朋友的就不用擔心這點）<br>`,
+                    },
+                    how: {
+                        title: "HOW",
+                        content: `<b>選擇最適合自己的間歇斷食法</b><br>
+                        每個人用餐時間、 作息不同， 所以要選一個最適合自己的方式<br>
+                        <br>
+                        <b>每日斷食法</b>（ Leangains）<br>
+                        一天只有一個時段進食（ 吃幾餐都可以）， 其他時間禁食（ 包括睡覺時間）<br>
+                        <br>
+                        <b>8 / 16 斷食法</b><br>
+                        一天八小時進食、 16 小時禁食（ 比如說早上10點到晚上5點吃東西）<br>
+                        <br>
+                        <b>6 / 18 斷食法、 4 / 20 斷食法</b><br>
+                        一天六小時， 或四小時進食。（ 比如說中午12點到下午6點）<br>
+                        你也可以7 / 17 斷食， 5 / 19 斷食， 只是大家通常都講偶數比較好聽。<br>
+                        <br>
+                        <b>個人評論</b><br>
+                        最容易入門， 而且很輕鬆<br>
+                        6 / 18 效果比8 / 16 更好， 基本上就是早餐晚點吃， 晚餐早點吃<br>
+                        一天兩餐可以吃得很有飽足感， 所以我會推薦大家先嘗試這個<br>
+                        我大部分時間都是4 / 20 斷食法， 因為我覺得一天只要煮一餐， 很方便<br>
+                        <br>
+                        <b>168 斷食， 連國際級期刊(NEJM) 都激推！</b><br>
+                        2020 年《 新英格蘭醫學期刊》 就發表對間歇性斷食的看法， 每天禁食16個小時的年輕人， 在2個月的阻力訓練中能有效減少脂肪並同時保持了肌肉。<br>
+                        另外間歇性斷食對於肥胖、 糖尿病、 心血管疾病、 癌症、 神經退化疾病(阿茲海默 / 帕金森氏症)… 都有一定的幫助。<br>
+                        對於想嘗試斷食又不知道該如何執行的人， 專家建議可以從『 一周五天的14 / 10(斷食 / 進食)』 開始做起：<br>
+                        一周五天的 16 / 8→<br>
+                        一周五天的 18 / 6→<br>
+                        一周七天的 18 / 6(恭喜達標！)<br>`,
+                    }
+
+                };
+            },
+
+            methods: {
+                changeIndex(change) {
+                    this.index = this.index + change
+                    if (this.index < 0) {
+                        this.index = 0
+                    } else if (this.index > 4) {
+                        this.index = 4
+                    }
+                }
+            },
+
+            mounted: function() {
+
+            }
+        }).mount("#app");
+    </script>
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+        -->
+</body>
+
+</html>
