@@ -182,6 +182,7 @@
             object-fit: cover;
             margin-top: 7vh;
             margin-left: 2.5vw;
+            border-radius: 10px;
         }
         
         .middle .txt {
@@ -228,6 +229,41 @@
             }
             .middle img {
                 height: 35vh;
+            }
+        }
+        
+        @media only screen and (max-width:450px) {
+            .d-flex button {
+                width: 12vw;
+                font-size: 0.2vh;
+                height: 4vh;
+            }
+            .d-flex {
+                width: 60vw;
+                height: 5vh;
+                padding-bottom: 1vh;
+            }
+            .logo {
+                width: 30vw;
+            }
+            .banner .bg {
+                height: 80vh;
+                width: 100vw;
+            }
+            .middle {
+                height: 60vh;
+                width: 70vw;
+                right: 15vw;
+            }
+            .middle img {
+                height: 50vh;
+            }
+            .banner-txt p {
+                left: 1vw;
+                bottom: 10vh;
+            }
+            .fix {
+                width: 100vw;
             }
         }
     </style>
@@ -429,6 +465,27 @@
                 height: 40vh;
             }
         }
+        
+        @media only screen and (max-width:450px) {
+            .wrap-1 {
+                height: 85vh;
+            }
+            .wrap-1 .nav-link {
+                width: 30vw;
+            }
+            .wrap-1 .con {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+            .wrap-1 .man-img {
+                top: 0;
+            }
+            .wrap-1 .con img {
+                width: 70vw;
+                height: 30vh;
+            }
+        }
     </style>
     <div class="wrap-1">
         <h1>關於作者</h1>
@@ -604,6 +661,33 @@
         }
         
         @media only screen and (max-width:830px) {}
+        
+        @media only screen and (max-width:450px) {
+            .wrap .item {
+                height: 40vh;
+                width: 95vw;
+                margin-bottom: 5vh;
+            }
+            .wrap .img3 {
+                width: 95vw;
+            }
+            .wrap {
+                height: 200vh;
+                width: 100vw;
+            }
+            .wrap .left {
+                border: none;
+            }
+            .wrap .right {
+                border: none;
+            }
+            .wrap .img4 {
+                margin-top: 0;
+            }
+            .wrap .img3 {
+                margin-bottom: 5vh;
+            }
+        }
     </style>
     <div class="wrap">
         <div class="container">
@@ -735,12 +819,24 @@
                 height: 120vh;
             }
         }
+        
+        @media only screen and (max-width:450px) {
+            .wrap1 {
+                height: 235vh;
+            }
+            .wrap1 .item1 {
+                padding-top: 0;
+            }
+            .card-item {
+                margin-bottom: 5vh;
+            }
+        }
     </style>
     <div class="wrap1">
         <h1>最新熱門食譜分享</h1>
         <div class="container">
             <div class="row">
-                <div class="col-12 col-md-6 col-lg-3 item1">
+                <div class="col-12 col-md-6 col-lg-3 item1 card-item">
                     <a href="">
                         <img src="images/食譜4.jpg" class=" my-card-img" alt="...">
                         <div class="card-body">
@@ -751,7 +847,7 @@
                         </div>
                     </a>
                 </div>
-                <div class="col-12 col-md-6 col-lg-3">
+                <div class="col-12 col-md-6 col-lg-3 card-item">
                     <a href="">
                         <img src="images/食譜1.jpg" class="img-fluid rounded-start my-card-img " alt="...">
                         <div class="card-body">
@@ -761,7 +857,7 @@
                         </div>
                     </a>
                 </div>
-                <div class="col-12 col-md-6 col-lg-3 item1">
+                <div class="col-12 col-md-6 col-lg-3 item1 card-item">
                     <a href="">
                         <img src="images/食譜2.jpg" class="img-fluid rounded-start my-card-img" alt="...">
                         <div class="card-body">
@@ -771,7 +867,7 @@
                         </div>
                     </a>
                 </div>
-                <div class="col-12 col-md-6 col-lg-3">
+                <div class="col-12 col-md-6 col-lg-3 card-item">
                     <a href="">
                         <img src="images/食譜3.jpg" class="img-fluid rounded-start my-card-img" alt="...">
                         <div class="card-body">
@@ -846,7 +942,7 @@
             <div class="carousel-inner">
                 <div class="carousel-item active">
                     <img src="images/幻燈片1.jpg" class="d-block w-100" alt="...">
-                    <div class="carousel-caption d-none d-md-block">
+                    <div class="carousel-caption d-md-block">
                         <a href="">
                             <h5>重訓對於減脂的效果好嗎?</h5>
                             <p>重訓不僅能雕塑線條、保持體重，還能調節血壓，增強記憶，甚至還可提升基礎代謝量，打造易瘦體質</p>
@@ -855,7 +951,7 @@
                 </div>
                 <div class="carousel-item">
                     <img src="images/幻燈片2.jpg" class="d-block w-100" alt="...">
-                    <div class="carousel-caption d-none d-md-block">
+                    <div class="carousel-caption d-md-block">
                         <a href="">
                             <h5>減脂最棒的有氧運動TOP5</h5>
                             <p>有氧運動雖然對於健身新手的訓練成效幫助沒有很大，但卻是可以幫助進階健身者更進步的好方法。</p>
@@ -864,7 +960,7 @@
                 </div>
                 <div class="carousel-item">
                     <img src="images/幻燈片3.jpg" class="d-block w-100" alt="...">
-                    <div class="carousel-caption d-none d-md-block">
+                    <div class="carousel-caption d-md-block">
                         <a href="">
                             <h5>減脂可以吃水果嗎?</h5>
                             <p>水果適量吃的話，並沒有這麼恐怖，營養師張家偉表示，水果不適合取代正餐，但它可作為點心的選項之一</p>
