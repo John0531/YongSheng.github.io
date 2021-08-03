@@ -203,7 +203,7 @@
             transition: 2s ease;
         }
         
-        .middle .container:hover {
+        .turn-page {
             transform: perspective(2000px) rotate3d(1, 0, 1, 270deg);
         }
         
@@ -253,6 +253,44 @@
             font-size: 2vw;
         }
         
+        .next {
+            border: none;
+            background-color: rgb(255, 208, 154);
+            width: 6vw;
+            height: 5vh;
+            font-size: 1vw;
+            border-radius: 15px;
+            color: rgb(92, 72, 16);
+            box-shadow: 0 0 5px rgb(92, 72, 16);
+            position: absolute;
+            bottom: 1.5vh;
+            right: 0.5vw;
+        }
+        
+        .next:hover {
+            color: #fff;
+            background-color: rgb(134, 101, 51);
+        }
+        
+        .go-back {
+            border: none;
+            background-color: rgb(255, 208, 154);
+            width: 6vw;
+            height: 5vh;
+            font-size: 1vw;
+            border-radius: 15px;
+            color: rgb(92, 72, 16);
+            box-shadow: 0 0 5px rgb(92, 72, 16);
+            position: absolute;
+            bottom: 1.5vh;
+            right: 0.5vw;
+        }
+        
+        .go-back:hover {
+            color: #fff;
+            background-color: rgb(134, 101, 51);
+        }
+        
         @media only screen and (max-width:1200px) {
             .link {
                 margin-left: 0.2vw;
@@ -294,7 +332,25 @@
                 height: 43vh;
             }
             .middle .txt {
-                margin-top: 3vh;
+                margin-top: 4vh;
+            }
+            .middle .txt p {
+                padding-top: 0.5vh;
+                font-size: 1.2vw;
+            }
+            .middle .txt h3 {
+                margin-bottom: 0;
+                margin-left: 0;
+                text-align: center;
+                font-size: 1.7vw;
+            }
+            .next {
+                height: 3vh;
+                bottom: 1vh;
+            }
+            .go-back {
+                height: 3vh;
+                bottom: 1vh;
             }
         }
         
@@ -347,6 +403,18 @@
             }
             .banner-txt h1 {
                 font-size: 3.5vw;
+            }
+            .next {
+                height: 3vh;
+                bottom: 1vh;
+                width: 10vw;
+                right: 1vw;
+            }
+            .go-back {
+                height: 3vh;
+                bottom: 1vh;
+                width: 10vw;
+                right: 1vw;
             }
         }
         
@@ -415,6 +483,18 @@
             .back p {
                 font-size: 3.3vw;
                 margin-top: 2vh;
+            }
+            .next {
+                height: 3vh;
+                bottom: 1vh;
+                width: 17vw;
+                right: 2vw;
+            }
+            .go-back {
+                height: 3vh;
+                bottom: 1vh;
+                width: 17vw;
+                right: 2vw;
             }
         }
     </style>
@@ -494,12 +574,14 @@
                     <h3>減脂準備建議</h3>
                     <p>1. 量出目前的體脂<br> 2. 每週減掉體重的1%<br> 3. 計算出自己的TDEE<br> 4. 選一個適合自己的飲食<br> 5. 選一個適合自己的運動<br> 6. 規律的生活<br> 7. 多喝水、少喝飲料<br>
                     </p>
+                    <button type="button" class="next">Next Page</button>
                 </div>
             </div>
             <div class="back">
                 <p>減肥來講就是TDEE*0.8開始會是不錯的開始，這樣每個星期可以確保自己減去1%的總體重。若減得太快或太慢，則可以調高或調低攝取量。<br>
                     <br> 除了計算TDEE外，對減肥不懂的人常常會不知道重量訓練對減肥的幫助。其實重量訓練在減肥過程中，cp值比有氧運動還高，因為可以維持肌肉量以及刺激荷爾蒙分泌。若你平常就有在做有氧運動，可以開始練習重訓。若你有在重訓了，可以參考我的重量訓練菜單。若你沒在重訓，建議你去找個教練開始增肌減脂吧。
                 </p>
+                <button type="button" class="go-back">Go Back</button>
             </div>
         </div>
         <a href="">
@@ -521,15 +603,20 @@
             $(".boy").animate({
                 bottom: "-5vh",
                 opacity: "1"
-            }, 1500)
+            }, 1500);
             $(".navbar").animate({
                 top: "0"
-            }, 1500)
-            $(".dropdown-toggle").click(function() {
-                $(".diet-menu").animate({
-                    transform: "translateY(0)"
-                })
-            })
+            }, 1500);
+            $(".next").click(function() {
+                $(".middle .container").css({
+                    "transform": "perspective(2000px) rotate3d(1, 0, 1, 270deg)"
+                });
+            });
+            $(".go-back").click(function() {
+                $(".middle .container").css({
+                    "transform": ""
+                });
+            });
         });
     </script>
 
@@ -1081,15 +1168,22 @@
             transform: translate(-50%);
             margin: auto;
             z-index: 2;
+            text-shadow: 1px 1px 3px #000;
         }
         
         .wrap2 img {
             height: 500px;
             object-fit: cover;
+            filter: blur(5px);
         }
         
         .wrap2 h5 {
             font-size: 28px;
+            text-shadow: 1px 1px 3px #000;
+        }
+        
+        .wrap2 p {
+            text-shadow: 1px 1px 3px #000;
         }
         
         .wrap2 a {
