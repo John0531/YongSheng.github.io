@@ -642,8 +642,10 @@
             border-radius: 50%;
             top: 20vh;
             left: 0;
+            opacity: 0;
             object-fit: cover;
-            animation: A1 3s 2s ease infinite;
+            animation: A1 3s 3s ease infinite;
+            transition: 1.5s ease;
         }
         
         @keyframes A1 {
@@ -791,12 +793,10 @@
             $(window).scroll(function() {
                 var scroHei = $(window).scrollTop();
                 if (scroHei > 150) {
-                    $(".wrap-1 .container").fadeIn(1500)
-                    $(".wrap-1 .man-img").animate({
+                    $(".wrap-1 .man-img").css({
                         left: "7vw",
-                    }, 1500)
-                } else {
-                    $(".wrap-1 .container").fadeOut()
+                        opacity: "1"
+                    })
                 }
             });
         });
