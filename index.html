@@ -175,7 +175,7 @@
         
         .middle {
             width: 50vw;
-            height: 63vh;
+            height: 65vh;
             position: absolute;
             right: 18vw;
             top: 18vh;
@@ -187,23 +187,61 @@
         
         .middle .container {
             display: flex;
+            position: absolute;
+            background-color: rgb(255, 244, 225);
+            width: 45vw;
+            height: 57vh;
+            right: 0;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+            z-index: 999;
+            box-shadow: 0 0 10px #837c68;
+            transform: perspective(2000px) rotate3d(1, 0, 0, 0deg);
+            transform-origin: 0% 0%;
+            transition: 2s ease;
+        }
+        
+        .middle .container:hover {
+            transform: perspective(2000px) rotate3d(1, 0, 1, 270deg);
+        }
+        
+        .back {
+            position: absolute;
+            background-color: rgba(201, 195, 185, 0.596);
+            width: 45vw;
+            height: 57vh;
+            right: 0;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+        }
+        
+        .back p {
+            color: #fff;
+            margin: 4vh 4vw 0;
+            font-size: 1.3vw;
+            line-height: 1.7;
+            text-shadow: 2px 2px 2px #000;
         }
         
         .middle img {
             width: 29vw;
             height: 50vh;
             object-fit: cover;
-            margin-top: 7vh;
-            margin-left: 2.5vw;
+            margin-top: 4vh;
+            margin-left: 1vw;
             border-radius: 10px;
         }
         
         .middle .txt {
-            margin-left: 2.5vw;
-            margin-top: 13vh;
+            margin-left: 1vw;
+            margin-top: 5vh;
         }
         
-        .middle p {
+        .middle .txt p {
             line-height: 1.7;
             padding-top: 1vh;
             padding-left: 0.7vw;
@@ -217,9 +255,54 @@
         
         @media only screen and (max-width:1200px) {
             .link {
-                margin-left: 0.5vw;
-                font-size: 1.7vw;
+                margin-left: 0.2vw;
+                font-size: 2vw;
                 width: auto;
+                white-space: nowrap;
+            }
+            .d-flex button {
+                width: 8vw;
+                font-size: 1.2vw;
+                text-align: center;
+                padding: 0.5vh 0.5vw;
+                font-size: 2vh;
+            }
+            .d-flex {
+                margin-left: 0vw;
+                width: 20vw;
+                height: 6vh;
+            }
+            .banner .bg {
+                height: 70vh;
+            }
+            .logo {
+                width: 15vw;
+            }
+            .middle {
+                height: 48vh;
+            }
+            .middle img {
+                height: 37vh;
+            }
+            .diet-menu a {
+                font-size: 2vw;
+            }
+            .middle .container {
+                height: 43vh;
+            }
+            .back {
+                height: 43vh;
+            }
+            .middle .txt {
+                margin-top: 3vh;
+            }
+        }
+        
+        @media only screen and (max-width:830px) {
+            .link {
+                margin-left: 2.5vw;
+                font-size: 4vw;
+                width: 6vw;
                 white-space: nowrap;
             }
             .navbar-nav {
@@ -234,23 +317,8 @@
             .d-flex {
                 margin-left: 1.5vw;
             }
-            .banner .bg {
-                height: 70vh;
-            }
             .logo {
                 width: 25vw;
-            }
-            .middle {
-                height: 48vh;
-            }
-            .middle img {
-                height: 35vh;
-            }
-            .banner .link {
-                font-size: 4vw;
-            }
-            .diet-menu a {
-                font-size: 3vw;
             }
             .d-flex button {
                 width: 12vw;
@@ -261,6 +329,24 @@
                 width: 70vw;
                 height: 6vh;
                 padding-bottom: 1vh;
+            }
+            .diet-menu a {
+                font-size: 3.5vw;
+            }
+            .diet-menu {
+                margin-left: 4vw;
+            }
+            .middle .txt {
+                margin-top: 6vh;
+            }
+            .back p {
+                font-size: 2vw;
+            }
+            .banner-txt p {
+                font-size: 2.5vw;
+            }
+            .banner-txt h1 {
+                font-size: 3.5vw;
             }
         }
         
@@ -288,13 +374,14 @@
                 right: 15vw;
             }
             .middle img {
+                margin-top: 3vh;
                 height: 50vh;
             }
             .middle h3 {
                 font-size: 4vw;
             }
-            .middle p {
-                font-size: 3.5vw;
+            .middle .txt p {
+                font-size: 2vw;
             }
             .banner-txt p {
                 left: 1vw;
@@ -313,6 +400,21 @@
             }
             .diet-menu a {
                 font-size: 5vw;
+            }
+            .middle .container {
+                height: 55vh;
+                width: 60vw;
+            }
+            .middle .txt {
+                margin-left: 2vw;
+            }
+            .back {
+                height: 55vh;
+                width: 60vw;
+            }
+            .back p {
+                font-size: 3.3vw;
+                margin-top: 2vh;
             }
         }
     </style>
@@ -394,6 +496,11 @@
                     </p>
                 </div>
             </div>
+            <div class="back">
+                <p>減肥來講就是TDEE*0.8開始會是不錯的開始，這樣每個星期可以確保自己減去1%的總體重。若減得太快或太慢，則可以調高或調低攝取量。<br>
+                    <br> 除了計算TDEE外，對減肥不懂的人常常會不知道重量訓練對減肥的幫助。其實重量訓練在減肥過程中，cp值比有氧運動還高，因為可以維持肌肉量以及刺激荷爾蒙分泌。若你平常就有在做有氧運動，可以開始練習重訓。若你有在重訓了，可以參考我的重量訓練菜單。若你沒在重訓，建議你去找個教練開始增肌減脂吧。
+                </p>
+            </div>
         </div>
         <a href="">
             <img src="images/pexels-geraud-pfeiffer-6605903 (1).jpg" alt="" class="bg">
@@ -449,6 +556,16 @@
             top: 20vh;
             left: 0;
             object-fit: cover;
+            animation: A1 3s 2s ease infinite;
+        }
+        
+        @keyframes A1 {
+            0% {
+                transform: perspective(500px) rotateY(0deg);
+            }
+            100% {
+                transform: perspective(500px) rotateY(360deg);
+            }
         }
         
         .nav-link {
@@ -589,7 +706,7 @@
                 if (scroHei > 150) {
                     $(".wrap-1 .container").fadeIn(1500)
                     $(".wrap-1 .man-img").animate({
-                        left: "7vw"
+                        left: "7vw",
                     }, 1500)
                 } else {
                     $(".wrap-1 .container").fadeOut()
