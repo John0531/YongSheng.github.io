@@ -217,7 +217,7 @@
                         {{index+1}}
                     </span>
                     <span class="type">
-                        <a href="">{{option[index].title}}</a>
+                        <a :href="option[index].link">{{option[index].title}}</a>
                     </span>
                 </div>
                 <button type="button" class="arrow" @click="changeIndex(+1)"><i class="bi bi-caret-right-fill"></i></button>
@@ -482,8 +482,8 @@
                     this.index = this.index + change
                     if (this.index < 0) {
                         this.index = 0
-                    } else if (this.index > 4) {
-                        this.index = 4
+                    } else if (this.index > 3) {
+                        this.index = 3
                     }
                 },
             },
