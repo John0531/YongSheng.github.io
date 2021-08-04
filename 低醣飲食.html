@@ -194,6 +194,57 @@
             bottom: 55vh;
             float: right;
         }
+        
+        @media only screen and (max-width:1200px) {
+            .txt {
+                height: 13vh;
+            }
+            .wrap2 {
+                height: 140vh;
+            }
+        }
+        
+        @media only screen and (max-width:830px) {
+            .txt {
+                height: 8vh;
+            }
+            .wrap2 {
+                height: 100vh;
+            }
+            .list-group-item {
+                height: 4vh;
+            }
+        }
+        
+        @media only screen and (max-width:450px) {
+            .txt {
+                height: 11vh;
+                width: 68vw;
+            }
+            .wrap2 {
+                height: 180vh;
+            }
+            .list-group-item {
+                height: 8vh;
+                font-size: 1vw;
+                white-space: nowrap;
+            }
+            .list-group {
+                width: 21vw;
+            }
+            .doc {
+                padding-right: 6vw;
+            }
+            h6 {
+                font-size: 1px;
+            }
+            .type {
+                width: 40vw;
+            }
+            .menu {
+                margin-bottom: 0.8vh;
+            }
+        }
     </style>
 </head>
 
@@ -224,7 +275,7 @@
             </div>
             <div class="container">
                 <div class="row">
-                    <div class="col-10">
+                    <div class="col-10 doc">
                         <h1>{{what.title}}</h1>
                         <p v-html="what.content"></p>
                         <h1>{{why.title}}</h1>
