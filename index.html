@@ -296,6 +296,82 @@
             background-color: rgb(134, 101, 51);
         }
         
+        .bg-img-6 {
+            position: absolute;
+            left: 3vw;
+            top: 48vh;
+            opacity: 0;
+            filter: blur(1px);
+            transition: 1.5s ease;
+            width: 20vw;
+        }
+        
+        .bg-img-3 {
+            position: absolute;
+            left: 30vw;
+            top: 165vh;
+            filter: blur(1px);
+            width: 30vw;
+        }
+        
+        .bg-img-2 {
+            position: absolute;
+            left: -20vw;
+            top: 180vh;
+            filter: blur(1px);
+            width: 35vw;
+        }
+        
+        .bg-img-1 {
+            position: absolute;
+            left: 6vw;
+            top: 270vh;
+            filter: blur(1px);
+            width: 25vw;
+        }
+        
+        .bg-img-4 {
+            position: absolute;
+            left: 45vw;
+            top: 275vh;
+            filter: blur(1px);
+            width: 25vw;
+        }
+        
+        .bg-img-5 {
+            position: absolute;
+            left: 20vw;
+            top: 340vh;
+            filter: blur(1px);
+            width: 30vw;
+        }
+        
+        .bg-img-8 {
+            position: absolute;
+            right: 0vw;
+            opacity: 0;
+            top: 88vh;
+            filter: blur(1px);
+            transition: 1.5s ease;
+            width: 35vw;
+        }
+        
+        .bg-img-7 {
+            position: absolute;
+            right: 0vw;
+            top: 220vh;
+            filter: blur(1px);
+            width: 35vw;
+        }
+        
+        .bg-img-9 {
+            position: absolute;
+            right: 0vw;
+            top: 310vh;
+            filter: blur(1px);
+            width: 30vw;
+        }
+        
         @media only screen and (max-width:1200px) {
             .link {
                 margin-left: 0.2vw;
@@ -503,82 +579,6 @@
                 right: 2vw;
             }
         }
-        
-        .bg-img-6 {
-            position: absolute;
-            left: 3vw;
-            top: 48vh;
-            opacity: 0;
-            filter: blur(1px);
-            transition: 1.5s ease;
-            width: 20vw;
-        }
-        
-        .bg-img-3 {
-            position: absolute;
-            left: 30vw;
-            top: 165vh;
-            filter: blur(1px);
-            width: 30vw;
-        }
-        
-        .bg-img-2 {
-            position: absolute;
-            left: -20vw;
-            top: 180vh;
-            filter: blur(1px);
-            width: 35vw;
-        }
-        
-        .bg-img-1 {
-            position: absolute;
-            left: 6vw;
-            top: 270vh;
-            filter: blur(1px);
-            width: 25vw;
-        }
-        
-        .bg-img-4 {
-            position: absolute;
-            left: 45vw;
-            top: 275vh;
-            filter: blur(1px);
-            width: 25vw;
-        }
-        
-        .bg-img-5 {
-            position: absolute;
-            left: 20vw;
-            top: 340vh;
-            filter: blur(1px);
-            width: 30vw;
-        }
-        
-        .bg-img-8 {
-            position: absolute;
-            right: -30vw;
-            opacity: 0;
-            top: 88vh;
-            filter: blur(1px);
-            transition: 1.5s ease;
-            width: 35vw;
-        }
-        
-        .bg-img-7 {
-            position: absolute;
-            right: 0vw;
-            top: 220vh;
-            filter: blur(1px);
-            width: 35vw;
-        }
-        
-        .bg-img-9 {
-            position: absolute;
-            right: 0vw;
-            top: 310vh;
-            filter: blur(1px);
-            width: 30vw;
-        }
     </style>
 </head>
 
@@ -606,15 +606,6 @@
                     $(".bg-img-6").css({
                         top: "88vh",
                         opacity: "1",
-                    })
-                } else if (document.body.clientWidth < 1200) {
-                    $(".bg-img-8").css({
-                        right: "0vw",
-                        top: "70vh",
-                        opacity: "1",
-                    })
-                    $(".bg-img-6").css({
-
                     })
                 }
             });
