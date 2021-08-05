@@ -1,0 +1,294 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    <title>Hello, world!</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        font-family: 'Noto Sans TC', sans-serif;
+    }
+    
+    .logo {
+        width: 13vw;
+        height: auto;
+        object-fit: cover;
+    }
+    
+    .navbar {
+        position: fixed;
+        z-index: 2;
+        border-radius: 0 20px 20px 0;
+        opacity: 0.9;
+        box-shadow: 5px 5px 10px #8a7256;
+        width: 88vw;
+        height: 13vh;
+        top: -13vh
+    }
+    /* .collapse {
+            font-size: 3vh;
+        } */
+    
+    .collapse {
+        background-color: #f2e2cede;
+        border-radius: 10px;
+    }
+    
+    .link {
+        color: rgb(77, 77, 77);
+        margin: 0 2.3vw;
+        text-decoration: none;
+        display: block;
+        white-space: nowrap;
+        font-size: 3vh;
+    }
+    
+    .link:hover {
+        color: #fff;
+    }
+    
+    .d-flex {
+        margin-left: 2.5vw;
+    }
+    
+    .diet-menu {
+        z-index: 0;
+        background-color: #f2e2cede;
+        width: 14vw;
+        height: 28vh;
+        border-radius: 10px;
+        padding: 0;
+        box-shadow: 0px 0px 10px rgb(70, 69, 69);
+        opacity: 1;
+    }
+    
+    .diet-menu a:hover {
+        background-color: rgba(255, 255, 255, 0.795);
+        color: #000;
+    }
+    
+    .diet-menu a {
+        text-decoration: none;
+        display: block;
+        color: rgba(59, 59, 59, 0.712);
+        font-size: 1.4vw;
+        text-shadow: 1px 1px 1px rgb(117, 117, 117);
+        border-radius: 10px;
+        text-align: center;
+        height: 7vh;
+        padding-top: 1vh;
+    }
+    
+    .wrap {
+        width: 100%;
+        height: 3300px;
+        background: url(../YongSheng.github.io/images/營養素背景.jpg) 20% center;
+        position: relative;
+        z-index: -2;
+    }
+    
+    .wrap::after {
+        content: "";
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        left: 0;
+        top: 0;
+        background: inherit;
+        filter: blur(5px);
+        z-index: -1;
+    }
+    
+    .wrap .container {
+        z-index: 99;
+        padding-top: 20vh;
+    }
+</style>
+
+<body>
+
+    <div class="wrap">
+        <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #f2e2ce;">
+            <div class="container-fluid px-5">
+                <a class="navbar-brand" href="#"><img src="images/logo-已修復.gif" alt="" class="logo"></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="link active" aria-current="page" href="../YongSheng.github.io/index.html">首頁</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">飲食方法</a>
+                            <ul class="diet-menu dropdown-menu">
+                                <li>
+                                    <a href="../YongSheng.github.io/間歇性斷食.html">間歇性斷食</a>
+                                </li>
+                                <li>
+                                    <a href="../YongSheng.github.io/低醣飲食.html">低醣飲食</a>
+                                </li>
+                                <li>
+                                    <a href="../YongSheng.github.io/生酮飲食.html">生酮飲食</a>
+                                </li>
+                                <li>
+                                    <a href="../YongSheng.github.io/碳循環飲食.html">碳循環飲食</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="link" href="#">營養素</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="link" href="../YongSheng.github.io/食譜.html">食譜</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="link" href="#">加入會員</a>
+                        </li>
+                    </ul>
+                    <form class="d-flex">
+                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-success" type="submit">Search</button>
+                    </form>
+                </div>
+            </div>
+        </nav>
+        <div class="container">
+            <div class="row mb-5">
+                <div class="col-8">
+                    <h1>蛋白質</h1>
+                    <h3>蛋白質的來源及分類</h3>
+                    <p>蛋白質的食物來源可分為動物性和植物性：<br> 動物性：蛋、奶、肉類、魚類、家禽類。<br> 植物性：黃豆、豆製品、豆類、核果類、五穀根莖類。
+                    </p>
+                    <br>
+                    <h3>蛋白質的功能</h3>
+                    <p>每1公克的蛋白質可以產生4大卡的熱量。<br> 蛋白質可以建造新的組織，所以對生長發育期都非常的重要。（生長發育期如：嬰兒期、兒童期、青春期及懷孕期）
+                        <br> 對已建立的組織，蛋白質具有修補的功能；血液中的蛋白質，如白蛋白、球蛋白等的構成也需要蛋白質。
+                        <br> 蛋白質也可以維持身體中的酸鹼平衡及水的平衡、幫助營養素的運輸、或構成酵素、激素和抗體等，可調節生理機能、也維持人體免疫力的充分。
+                        <br>
+                        <br> 在飲食之中
+                        <br> 蛋白質大多來自於肉類及蛋類
+                        <br> 同時會攝取過量的脂質
+                        <br> 所以選擇脂肪量少的蛋白質來源是非常重要的喔！
+                    </p>
+                    <br>
+                    <h3>蛋白質的每日建議攝取量</h3>
+                    <p>豆魚肉蛋類1份（重量為可食生重）<br> ＝魚（35公克）
+                        <br> ＝去皮雞胸肉（30公克）或鴨肉、豬小里肌肉、羊肉、牛腱（35公克）
+                        <br> ＝雞蛋1個（65公克購買重量）
+                        <br> ＝黃豆（20公克）或毛豆（50公克）或黑豆（20公克）
+                        <br> ＝無糖豆漿1杯（260毫升）
+                        <br> ＝傳統豆腐3格（80公克）或嫩豆腐半盒（140公克）或小方豆干1又1/4片（40公克）
+                    </p>
+                    <br>
+                    <h3>蛋白質攝取不足的影響</h3>
+                    <p>蛋白質攝取不足時，會造成生長發育遲緩、體重不足、容易疲倦、抵抗力減弱。懷孕期之婦女蛋白質攝取不足則容易貧血、流產、生出的嬰兒體重、身高不足，嚴重的會造成水腫、脂肪肝、皮膚炎等；若再加上熱量攝取不夠，就會形成所謂的蛋白質熱量缺乏症。</p>
+                    <br>
+                    <h3>蛋白質攝取太多的影響</h3>
+                    <p>蛋白質攝取太多，會增加肝臟代謝負擔。<br> 蛋白質代謝時所產生一些含氮的廢棄物則由腎臟來排泄，所以蛋白質如果攝取太多，含氮廢棄物就會增加，進而增加腎臟的負荷。
+                        <br> 蛋白質代謝時所產生一些酸性的物質會與鈣結合後排出，因此會增加鈣的排泄。
+                        <br> 蛋白質的攝取來源如果大多來自於肉和蛋類，那麼也會增加飽和脂肪和膽固醇的攝取量，也增加了罹患心血管性疾病的機率。
+                    </p><br>
+                    <br>
+                </div>
+                <div class="col-4">不足時，會造成生長發育遲緩、體重不足、容易疲倦、抵抗力減弱。懷孕期之婦女蛋白質攝取不足則容</div>
+            </div>
+            <div class="row mb-5">
+                <div class="col-4"></div>
+                <div class="col-8">
+                    <h1>醣類</h1>
+                    <h3>醣類的來源及分類</h3>
+                    <p>醣類可以分為單醣、雙醣及多醣類：<br> 單醣類：葡萄糖、果糖、半乳糖。
+                        <br> 雙醣類：蔗糖、麥芽糖、乳糖。
+                        <br> 多醣類：澱粉、糊精、纖維質、肝糖。
+                        <br> 醣類的食物來源包括澱粉類食物，如：米飯、麵食、馬鈴薯、蕃薯等五穀根莖類；少量來自奶類的乳糖，水果及蔬菜中的果糖及其他糖類。
+                    </p>
+                    <br>
+                    <h3>醣類的功能</h3>
+                    <p>醣類主要的功能在供給身體所需要的能量，1公克的醣類可以產生4大卡的熱量。<br> 當身體中的醣類不夠時，身體便會以蛋白質作為能量的來源，而使得蛋白質無法進行促進身體的生長發育、修補組織的功能，所以醣類可以節省蛋白質的消耗，讓蛋白質可以進行最主要的功能。
+                        <br> 而且在脂質氧化的過程當中，也必須要有醣類的參與，脂質才能完全氧化。
+                        <br> 醣類中的葡萄糖是神經細胞能量的唯一來源，尤其是腦細胞特別不能缺少葡萄糖。
+                        <br>
+                        <br> 當你運動強度很高
+                        <br> 主要就是以醣類來做為能量來源
+                        <br> 它可以節省蛋白質的消耗
+                        <br> 讓蛋白質進行它原來最主要的工作
+                    </p>
+                    <br>
+                    <h3>醣類的每日建議攝取量</h3>
+                    <p>可是如果過度沉迷於醣類的攝取<br> 它又會將能量轉換成你不想要的脂肪儲存在身體
+                        <br> 所以根據衛生署福利部的《國人膳食營養素參考攝取量》
+                        <br> 每天大家的攝取量是總熱量的 56 ~ 68 %</p>
+                    <br>
+                    <h3>醣類攝取不足的影響</h3>
+                    <p>醣類攝取不足，會造成體內無法獲得足夠的熱量，因而缺乏活力，而且蛋白質及脂質在身體內的代謝亦會不正常。</p>
+                    <br>
+                    <h3>醣類攝取太多的影響</h3>
+                    <p>醣類攝取過多，熱量增加，當超過身體所需要的量之後，則會轉變成脂肪儲存在身體中，這就是造成肥胖的原因之一，也就是說，醣類吃多了亦會變人體的脂肪。</p>
+                    <br>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-8">
+                    <h1>脂肪</h1>
+                    <h3>脂質的來源及分類</h3>
+                    <p>脂質的主要來源有植物性油脂及動物性脂肪。<br> 植物性油脂：大豆油、花生油和菜籽油；植物性油脂中不含膽固醇，含較多的不飽和脂肪酸，但椰子油和棕櫚油例外，含飽和脂肪酸較高。
+                        <br> 動物性油脂：牛油、豬油之動物性油脂，含飽和脂肪酸較高，家禽海鮮類的脂肪較低，飽和脂肪酸亦較少。
+                    </p>
+                    <br>
+                    <h3>脂質的功能</h3>
+                    <p>脂質主要的功能在提供熱量生長及維持皮膚健康所必需的必需脂肪酸；維生素A、D、E、K為脂溶性維生素，必需溶於脂肪中才能被吸收利用。<br> 脂質提供熱量，1公克脂肪能產生9大卡熱量，身體中多餘的熱量也以脂質的形態貯藏，身體上的脂質可以保持體溫及保護體內器官受到震盪撞擊的傷害，食物中的脂質可增加食物的美味，促進食慾，並減緩胃酸的分泌，使食物在胃中停留時間較長而增加飽足感。
+                    </p>
+                    <br>
+                    <h3>脂質的建議攝取量</h3>
+                    <p>脂質的攝取量隨個人熱量的需要而定，建議不超過總熱量的30%，且應控制飽和脂肪酸的攝取(不宜超過10%總熱量)。</p>
+                    <br>
+                    <h3>油脂攝取不足的影響</h3>
+                    <p>油脂攝取不足尤其當必要脂肪酸缺乏時，會造成皮膚粗糙、發育等問題；油脂中的必需脂肪酸缺乏時會造成生長遲緩、生育能力降低、皮膚粗糙、皮膚炎。</p>
+                    <br>
+                    <h3>油脂攝取太多的影響</h3>
+                    <p>油脂攝取過多，過多的熱量轉變成身體的脂肪組織，增加體重造成肥胖。<br> 當油脂中的飽和脂肪酸攝取過多，會使血膽固醇上升，會增加心血管疾病危險性。
+                    </p>
+                    <br>
+                </div>
+                <div class="col-4"></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        $(document).ready(function() {
+            $(".navbar").animate({
+                top: "0"
+            }, 1500);
+        })
+    </script>
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+        -->
+</body>
+
+</html>
