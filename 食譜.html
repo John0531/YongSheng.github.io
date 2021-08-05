@@ -23,12 +23,13 @@
             color: #000;
         }
         
-        .card {
-            padding: 0;
+        .card-text {
+            height: 10vh;
+            overflow: hidden;
         }
         
-        .card img {
-            height: 40vh;
+        .card-img-top {
+            height: 36vh;
         }
     </style>
 </head>
@@ -47,16 +48,18 @@
                     </select>
                     </div>
                 </div>
-                <div class="row g-4 row-cols-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-4">
-                    <div class="col card" v-for="(item,index) in card" :key="index">
-                        <a :href="item.link">
-                            <img :src="item.img" class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <h5 class="card-title">{{item.title}}</h5>
-                                <p class="card-text">{{item.content}}</p>
-                                <p class="card-text"><small class="text-muted">於{{item.update}}前更新</small></p>
-                            </div>
-                        </a>
+                <div class="row gx-3 gy-4 row-cols-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5">
+                    <div class="col" v-for="(item,index) in card" :key="index">
+                        <div class="card">
+                            <a :href="item.link">
+                                <img :src="item.img" class="card-img-top" alt="...">
+                                <div class="card-body">
+                                    <h5 class="card-title">{{item.title}}</h5>
+                                    <p class="card-text">{{item.content}}</p>
+                                    <small class="text-muted">於{{item.update}}前更新</small>
+                                </div>
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
