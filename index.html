@@ -91,7 +91,7 @@
         
         .fix {
             position: fixed;
-            z-index: 5;
+            z-index: 10;
             right: 0px;
             left: 0;
             margin: auto;
@@ -499,10 +499,83 @@
                 right: 2vw;
             }
         }
+        
+        .bg-img-1 {
+            position: absolute;
+            left: 6vw;
+            top: 270vh;
+            filter: blur(1px);
+        }
+        
+        .bg-img-8 {
+            position: absolute;
+            right: 0vw;
+            top: 88vh;
+            filter: blur(1px);
+        }
+        
+        .bg-img-2 {
+            position: absolute;
+            left: -20vw;
+            top: 180vh;
+            filter: blur(1px);
+        }
+        
+        .bg-img-6 {
+            position: absolute;
+            left: 3vw;
+            top: 88vh;
+            filter: blur(1px);
+        }
+        
+        .bg-img-7 {
+            position: absolute;
+            right: 0vw;
+            top: 220vh;
+            filter: blur(1px);
+        }
+        
+        .bg-img-5 {
+            position: absolute;
+            left: 20vw;
+            top: 340vh;
+            filter: blur(1px);
+        }
+        
+        .bg-img-9 {
+            position: absolute;
+            right: -10vw;
+            top: 310vh;
+            filter: blur(1px);
+        }
+        
+        .bg-img-3 {
+            position: absolute;
+            left: 30vw;
+            top: 165vh;
+            filter: blur(1px);
+        }
+        
+        .bg-img-4 {
+            position: absolute;
+            left: 45vw;
+            top: 275vh;
+            filter: blur(1px);
+        }
     </style>
 </head>
 
 <body>
+    <!-- 背景圖片 -->
+    <img src="../YongSheng.github.io/images/首頁背景1.png" alt="" class="bg-img-1" width="400vw">
+    <img src="../YongSheng.github.io/images/首頁背景6.png" alt="" class="bg-img-6" width="300vw">
+    <img src="../YongSheng.github.io/images/首頁背景2.png" alt="" class="bg-img-2" width="600vw">
+    <img src="../YongSheng.github.io/images/首頁背景8.png" alt="" class="bg-img-8" width="600vw">
+    <img src="../YongSheng.github.io/images/首頁背景7.png" alt="" class="bg-img-7" width="600vw">
+    <img src="../YongSheng.github.io/images/首頁背景5.png" alt="" class="bg-img-5" width="500vw">
+    <img src="../YongSheng.github.io/images/首頁背景9.png" alt="" class="bg-img-9" width="500vw">
+    <img src="../YongSheng.github.io/images/首頁背景3.png" alt="" class="bg-img-3" width="500vw">
+    <img src="../YongSheng.github.io/images/首頁背景4.png" alt="" class="bg-img-4" width="400vw">
     <!-- 橫幅廣告 -->
     <div class="fix">
         <video src="images/健康餐banner.mp4" autoplay loop class="bannervideo"></video>
@@ -628,9 +701,12 @@
     <style>
         .wrap-1 {
             background-image: url(images/作者介紹背景.jpg);
-            position: relative;
             height: 75vh;
             box-sizing: border-box;
+        }
+        
+        .wrap-1 .container {
+            position: relative;
         }
         
         .wrap-1 h1 {
@@ -643,8 +719,8 @@
             width: 22vw;
             height: 44vh;
             border-radius: 50%;
-            top: 20vh;
-            left: 0;
+            top: 10vh;
+            left: -15vw;
             opacity: 0;
             object-fit: cover;
             animation: A1 3s 3s ease infinite;
@@ -797,7 +873,7 @@
                 var scroHei = $(window).scrollTop();
                 if (scroHei > 150) {
                     $(".wrap-1 .man-img").css({
-                        left: "7vw",
+                        left: "2vw",
                         opacity: "1"
                     })
                 }
@@ -844,6 +920,7 @@
             text-align: center;
             padding-top: 2vh;
             padding-bottom: 4vh;
+            z-index: 1;
         }
         
         .wrap h1::after {
@@ -861,7 +938,7 @@
             height: 100%;
             object-fit: cover;
             border-radius: 10px;
-            opacity: 0.8;
+            opacity: 0.9;
         }
         
         .wrap .item {
@@ -951,8 +1028,8 @@
     </style>
     <div class="wrap">
         <div class="container">
-            <h1>如何選擇屬於自己的飲食方法?</h1>
             <div class="row">
+                <h1>如何選擇屬於自己的飲食方法?</h1>
                 <div class="col-12 col-md-6 left">
                     <a href="../YongSheng.github.io/間歇性斷食.html">
                         <div class="img1 item">
@@ -1062,6 +1139,10 @@
             padding-top: 10vh;
         }
         
+        .card-item {
+            z-index: 5;
+        }
+        
         @media only screen and (max-width:1200px) {
             .my-card-img {
                 height: 40vh;
@@ -1093,9 +1174,10 @@
         }
     </style>
     <div class="wrap1">
-        <h1>最新熱門食譜分享</h1>
+
         <div class="container">
             <div class="row">
+                <h1>最新熱門食譜分享</h1>
                 <div class="col-12 col-md-6 col-lg-3 item1 card-item">
                     <a href="">
                         <img src="images/食譜4.jpg" class=" my-card-img" alt="...">
