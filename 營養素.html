@@ -130,8 +130,87 @@
         text-shadow: 0 0 5px #000;
     }
     
+    .col-4 {
+        position: relative;
+    }
+    
     .wrap .container img {
         width: 100%;
+        position: absolute;
+    }
+    
+    body {
+        overflow-x: hidden;
+    }
+    
+    .a-1 {
+        left: 20vw;
+        top: 0vh;
+        opacity: 0;
+        transition: 1.5s ease;
+    }
+    
+    .a-2 {
+        left: 10vw;
+        top: 40vh;
+        opacity: 0;
+        transition: 1.5s ease;
+    }
+    
+    .a-3 {
+        left: 20vw;
+        top: 75vh;
+        opacity: 0;
+        transition: 1.5s ease;
+    }
+    
+    .a-4 {
+        left: 15vw;
+        top: 120vh;
+        opacity: 0;
+        transition: 1.5s ease;
+    }
+    
+    .b-1 {
+        right: 20vw;
+        top: 0vh;
+        opacity: 0;
+        transition: 1.5s ease;
+    }
+    
+    .b-2 {
+        right: 10vw;
+        top: 40vh;
+        opacity: 0;
+        transition: 1.5s ease;
+    }
+    
+    .b-3 {
+        right: 20vw;
+        top: 95vh;
+        opacity: 0;
+        transition: 3s ease;
+    }
+    
+    .c-1 {
+        left: 20vw;
+        top: 0vh;
+        opacity: 0;
+        transition: 1.5s ease;
+    }
+    
+    .c-2 {
+        left: 10vw;
+        top: 40vh;
+        opacity: 0;
+        transition: 1.5s ease;
+    }
+    
+    .c-3 {
+        left: 20vw;
+        top: 75vh;
+        opacity: 0;
+        transition: 3s ease;
     }
 </style>
 
@@ -221,17 +300,17 @@
                     <br>
                 </div>
                 <div class="col-4">
-                    <img src="../YongSheng.github.io/images/food/蛋白質1.png" alt="">
-                    <img src="../YongSheng.github.io/images/food/蛋白質3.png" alt="">
-                    <img src="../YongSheng.github.io/images/food/蛋白質2.png" alt="">
-                    <img src="../YongSheng.github.io/images/food/油3.png" alt="">
+                    <img src="../YongSheng.github.io/images/food/蛋白質1.png" alt="" class="a-1">
+                    <img src="../YongSheng.github.io/images/food/蛋白質3.png" alt="" class="a-2">
+                    <img src="../YongSheng.github.io/images/food/蛋白質2.png" alt="" class="a-3">
+                    <img src="../YongSheng.github.io/images/food/油3.png" alt="" class="a-4">
                 </div>
             </div>
             <div class="row mb-5">
                 <div class="col-4">
-                    <img src="../YongSheng.github.io/images/food/醣1.png" alt="">
-                    <img src="../YongSheng.github.io/images/food/醣2.png" alt="">
-                    <img src="../YongSheng.github.io/images/food/醣3.png" alt="">
+                    <img src="../YongSheng.github.io/images/food/醣1.png" alt="" class="b-1">
+                    <img src="../YongSheng.github.io/images/food/醣2.png" alt="" class="b-2">
+                    <img src="../YongSheng.github.io/images/food/醣3.png" alt="" class="b-3">
                 </div>
                 <div class="col-8">
                     <h1>醣類</h1>
@@ -290,9 +369,9 @@
                     <br>
                 </div>
                 <div class="col-4">
-                    <img src="../YongSheng.github.io/images/food/油1.png" alt="">
-                    <img src="../YongSheng.github.io/images/food/油2.png" alt="">
-                    <img src="../YongSheng.github.io/images/food/油4.png" alt="">
+                    <img src="../YongSheng.github.io/images/food/油1.png" alt="" class="c-1">
+                    <img src="../YongSheng.github.io/images/food/油2.png" alt="" class="c-2">
+                    <img src="../YongSheng.github.io/images/food/油4.png" alt="" class="c-3">
                 </div>
             </div>
         </div>
@@ -303,7 +382,68 @@
             $(".navbar").animate({
                 top: "0"
             }, 1500);
+            $(".a-1").css({
+                left: "0vw",
+                opacity: "1"
+            })
+            $(".a-2").css({
+                left: "6vw",
+                opacity: "1"
+            })
         })
+        $(function() {
+            $(window).scroll(function() {
+                var scroHei = $(window).scrollTop();
+                if (scroHei > 150) {
+                    $(".a-3").css({
+                        left: "0",
+                        opacity: "1"
+                    })
+                    $(".a-4").css({
+                        left: "6vw",
+                        opacity: "1"
+                    })
+                }
+            });
+        });
+        $(function() {
+            $(window).scroll(function() {
+                var scroHei = $(window).scrollTop();
+                if (scroHei > 1100) {
+                    $(".b-1").css({
+                        right: "0",
+                        opacity: "1"
+                    })
+                    $(".b-2").css({
+                        right: "7vw",
+                        opacity: "1"
+                    })
+                    $(".b-3").css({
+                        right: "6vw",
+                        opacity: "1"
+                    })
+                }
+            });
+        });
+        $(function() {
+            $(window).scroll(function() {
+                var scroHei = $(window).scrollTop();
+                if (scroHei > 2200) {
+                    $(".c-1").css({
+                        left: "0",
+                        opacity: "1"
+                    })
+                    $(".c-2").css({
+                        left: "6vw",
+                        opacity: "1"
+                    })
+                    $(".c-3").css({
+                        left: "3vw",
+                        opacity: "1"
+                    })
+                }
+            });
+        });
     </script>
     <!-- Optional JavaScript; choose one of the two! -->
 
