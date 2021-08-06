@@ -38,6 +38,7 @@
         body {
             overflow-x: hidden;
         }
+        /* 首頁banner */
         
         .banner {
             position: relative;
@@ -77,6 +78,7 @@
             top: 16vh;
             font-size: 2.5vw;
         }
+        /* 橫幅廣告 */
         
         .bannervideo {
             position: fixed;
@@ -297,6 +299,7 @@
             color: #fff;
             background-color: rgb(134, 101, 51);
         }
+        /* 背景圖片 */
         
         .bg-img-6 {
             position: absolute;
@@ -372,6 +375,12 @@
             top: 310vh;
             filter: blur(1px);
             width: 30vw;
+        }
+        /* 跳出視窗:網頁設計說明 */
+        
+        .modal-content {
+            background-color: rgb(255, 237, 214);
+            border-radius: 10px;
         }
         
         @media only screen and (max-width:1200px) {
@@ -613,6 +622,29 @@
             });
         });
     </script>
+    <!-- 跳出視窗:網頁設計說明 -->
+    <div class="modal fade" id="myModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">減脂飲食網站</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    這個網站主要分享關於減脂方法的資訊和各種不同的減脂料理食譜給用戶，目的在於讓不同體質的人，都能夠找到適合自己的減脂方法，讓減脂更加輕鬆更沒有負擔。<br>
+                    <br> 顏色的選擇以米色系為主，以木質紋理做為背景，並搭配各種食物與餐盤，呈現出餐桌上各種不同美食的感覺。
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        $(document).ready(function() {
+            $('#myModal').modal('show');
+        })
+    </script>
     <!-- 橫幅廣告 -->
     <div class="fix">
         <video src="images/健康餐banner.mp4" autoplay loop class="bannervideo"></video>
@@ -627,7 +659,6 @@
             });
         });
     </script>
-
 
     <!-- 導覽列+圖文滿版區 -->
     <div class="banner">
