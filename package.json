@@ -4,7 +4,7 @@
     "description": "",
     "main": "index.js",
     "scripts": {
-        "json": "json-server --watch database.json --port 8887"
+        "json": "json-server --watch db.json --port 8887"
     },
     "repository": {
         "type": "git",
