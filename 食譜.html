@@ -420,7 +420,7 @@
             },
 
             mounted() {
-                axios.get("http://localhost:8887/card")
+                axios.get("https://tranquil-coast-28128.herokuapp.com/card")
                     .then((res) => {
                         console.log(res)
                         this.card = res.data
