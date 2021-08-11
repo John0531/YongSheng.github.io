@@ -170,6 +170,17 @@
             background-image: url(../YongSheng.github.io/images/作者介紹背景.jpg);
             padding-bottom: 8vh;
         }
+        
+        .fade-enter-from,
+        .fade-leave-to {
+            opacity: 0;
+            transform: translateY(-50%);
+        }
+        
+        .fade-enter-active,
+        .fade-leave-active {
+            transition: all 1.5s;
+        }
     </style>
 </head>
 
@@ -245,18 +256,20 @@
         <div class="wrap">
             <div class="container">
                 <div class="row gx-3 gy-4 row-cols-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5">
-                    <div class="col" v-for="(item,index) in typeCard" :key="index">
-                        <div class="card">
-                            <a :href="item.link">
-                                <img :src="item.img" class="card-img-top" alt="...">
-                                <div class="card-body">
-                                    <h5 class="card-title">{{item.title}}</h5>
-                                    <p class="card-text">{{item.content}}</p>
-                                    <small class="text-muted">於{{item.update}}前更新</small>
-                                </div>
-                            </a>
+                    <transition-group name="fade" appear>
+                        <div class="col" v-for="(item,index) in typeCard" :key="index">
+                            <div class="card">
+                                <a :href="item.link">
+                                    <img :src="item.img" class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <h5 class="card-title">{{item.title}}</h5>
+                                        <p class="card-text">{{item.content}}</p>
+                                        <small class="text-muted">於{{item.update}}前更新</small>
+                                    </div>
+                                </a>
+                            </div>
                         </div>
-                    </div>
+                    </transition-group>
                 </div>
             </div>
         </div>
