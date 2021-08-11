@@ -4,14 +4,15 @@
     "description": "",
     "main": "index.js",
     "scripts": {
-        "json": "json-server --watch db.json --port 8887"
+        "json": "json-server --watch db.json --port 8887",
+        "start": "node server.js"
     },
     "repository": {
         "type": "git",
         "url": "git+https://github.com/John0531/YongSheng.github.io.git"
     },
     "author": "YongSheng",
-    "license": "MIT",
+    "license": "ISC",
     "bugs": {
         "url": "https://github.com/John0531/YongSheng.github.io/issues"
     },
