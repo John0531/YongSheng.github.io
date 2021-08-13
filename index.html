@@ -382,6 +382,10 @@
             background-color: rgb(255, 237, 214);
             border-radius: 10px;
         }
+        .bg-img {
+                filter: blur(3px);
+                opacity: 0.6;
+            }
         
         @media only screen and (max-width:1200px) {
             .link {
@@ -589,10 +593,7 @@
                 width: 17vw;
                 right: 2vw;
             }
-            .bg-img {
-                filter: blur(1px);
-                opacity: 0.5;
-            }
+            
         }
     </style>
 </head>
@@ -1225,7 +1226,40 @@
         .card-item {
             z-index: 5;
         }
-        
+        .wrap1 .modal-content{
+            width: 70vw;
+            height: 90vh;
+            background-image: url(../YongSheng.github.io/images/背景紋理2.jpg);
+            border-radius: 10px;
+        }
+        .wrap1 .modal-dialog{
+            max-width: 70vw;
+        }
+        .wrap1 .modal-header{
+            border: none;
+        }
+        .wrap1 .modal-footer{
+            border: none;
+        }
+        .wrap1 .modal-body img{
+            width: 100%;
+            height: 100%;
+            border-radius: 10px;
+            object-fit: cover;
+        }
+        .wrap1 .btn-outline-success,.wrap1 .btn-outline-secondary{
+            border: none;
+            font-size: 1.3vw;
+        }
+        .wrap1 .btn-outline-success{
+            color: rgb(0, 117, 63);
+        }
+        .wrap1 .btn-outline-success:hover{
+            color: #fff;
+        }
+        .wrap1 .modal-body .txt{
+            font-size: 1.6vw;
+        }
         @media only screen and (max-width:1200px) {
             .my-card-img {
                 height: 40vh;
@@ -1262,7 +1296,7 @@
             <div class="row">
                 <h1>最新熱門食譜分享</h1>
                 <div class="col-12 col-md-6 col-lg-3 item1 card-item">
-                    <a href="">
+                    <a href="" data-bs-target="#exampleModal-1" data-bs-toggle="modal">
                         <img src="images/食譜4.jpg" class=" my-card-img" alt="...">
                         <div class="card-body">
                             <h5 class="card-title">低卡烤雞胸沙拉</h5>
@@ -1273,7 +1307,7 @@
                     </a>
                 </div>
                 <div class="col-12 col-md-6 col-lg-3 card-item">
-                    <a href="">
+                    <a href="" data-bs-target="#exampleModal-2" data-bs-toggle="modal">
                         <img src="images/食譜1.jpg" class="img-fluid rounded-start my-card-img " alt="...">
                         <div class="card-body">
                             <h5 class="card-title">健康雞蛋沙拉</h5>
@@ -1283,7 +1317,7 @@
                     </a>
                 </div>
                 <div class="col-12 col-md-6 col-lg-3 item1 card-item">
-                    <a href="">
+                    <a href="" data-bs-target="#exampleModal-3" data-bs-toggle="modal">
                         <img src="images/食譜2.jpg" class="img-fluid rounded-start my-card-img" alt="...">
                         <div class="card-body">
                             <h5 class="card-title">活力蛋白質餐盒</h5>
@@ -1293,7 +1327,7 @@
                     </a>
                 </div>
                 <div class="col-12 col-md-6 col-lg-3 card-item">
-                    <a href="">
+                    <a href="" data-bs-target="#exampleModal-4" data-bs-toggle="modal">
                         <img src="images/食譜3.jpg" class="img-fluid rounded-start my-card-img" alt="...">
                         <div class="card-body">
                             <h5 class="card-title">零負擔蔬果拼盤</h5>
@@ -1305,6 +1339,103 @@
                 </div>
             </div>
         </div>
+        <div class="modal fade" id="exampleModal-1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                <div class="modal-header pb-0">
+                  <h2 class="modal-title" id="exampleModalLabel">低卡烤雞胸沙拉</h2>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="row modal-body">
+                  <div class="col-12 col-md-8"><img src="../YongSheng.github.io/images/食譜4.jpg" alt=""></div>
+                  <div class="col-12 col-md-4 txt">1.煮一鍋熱水，將雞胸肉燙熟切塊備用<br>
+                    <br>
+                    2.將蘿美生菜洗淨切成一口大小<br>
+                    <br>
+                    3.依序將蘿美生菜、雞胸肉塊、小番茄、豌豆嬰、小黃瓜片裝盤<br>
+                    <br>
+                    4.將沙拉醬材料混合均勻後淋上即可</div>
+                </div>
+                <div class="modal-footer pt-0">
+                  <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Close</button>
+                  <a href="../YongSheng.github.io/食譜.html" class="btn btn-outline-success" role="button">前往食譜總覽</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal fade" id="exampleModal-2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content">
+                <div class="modal-header pb-0">
+                  <h2 class="modal-title" id="exampleModalLabel">健康雞蛋沙拉</h2>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="row modal-body">
+                  <div class="col-12 col-md-8"><img src="../YongSheng.github.io/images/食譜1.jpg" alt=""></div>
+                  <div class="col-12 col-md-4 txt">1.咖哩粉、薑粉、優格，去適量抓醃雞胸肉，可前一晚做好放冰箱。<br>
+                    <br>
+                    2.雞胸肉切小塊，放入微波500瓦一分半，翻面後再600瓦約50秒左右，灑上適量義式香料。<br>
+                    <br>
+                    3.擺盤 將食材都放在美生菜上，完成。</div>
+                </div>
+                <div class="modal-footer pt-0">
+                  <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Close</button>
+                  <a href="../YongSheng.github.io/食譜.html" class="btn btn-outline-success" role="button">前往食譜總覽</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal fade" id="exampleModal-3" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content">
+                <div class="modal-header pb-0">
+                  <h2 class="modal-title" id="exampleModalLabel">活力蛋白質餐盒</h2>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="row modal-body">
+                  <div class="col-12 col-md-8"><img src="../YongSheng.github.io/images/食譜2.jpg" alt=""></div>
+                  <div class="col-12 col-md-4 txt">1.蒜頭切碎後，加少許橄欖油攪拌，微波20-30秒爆香<br>
+                    <br>
+                      2.九層塔、堅果切碎備用<br>
+                      <br>
+                      3.蒜頭爆香完成後，加入切碎九層塔和堅果，撕小片起司片，撒一點黑胡椒<br>
+                      <br>
+                      4.雞肉放入微波爐，一面加熱1.5分鐘後翻面，再微波1.5分鐘~
+                  </div>
+                </div>
+                <div class="modal-footer pt-0">
+                  <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Close</button>
+                  <a href="../YongSheng.github.io/食譜.html" class="btn btn-outline-success" role="button">前往食譜總覽</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal fade" id="exampleModal-4" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content">
+                <div class="modal-header pb-0">
+                  <h2 class="modal-title" id="exampleModalLabel">健康雞蛋沙拉</h2>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="row modal-body">
+                  <div class="col-12 col-md-8"><img src="../YongSheng.github.io/images/食譜3.jpg" alt=""></div>
+                  <div class="col-12 col-md-4 txt">1.把生菜稍微用水清洗過瀝乾
+                    接下來把洋蔥切成細丁準備，洗菜之前可以先用電鍋蒸水煮蛋記得米量杯半杯水就好<br>
+                    <br>
+                2.鮪魚濾乾跟洋蔥還有千島沙拉醬拌在一起<br>
+                <br>
+                3.舀一湯匙已經煮好的藜麥放進濾乾的沙拉<br>
+                <br>
+                4.把剛剛拌好的鮪魚沙拉醬加進生菜就完成了
+                </div>
+                </div>
+                <div class="modal-footer pt-0">
+                  <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Close</button>
+                  <a href="../YongSheng.github.io/食譜.html" class="btn btn-outline-success" role="button">前往食譜總覽</a>
+                </div>
+              </div>
+            </div>
+          </div>
     </div>
 
     <script>
