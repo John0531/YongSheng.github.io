@@ -112,7 +112,7 @@
         /* 導覽列 */
         
         .logo {
-            width: 13vw;
+            width: 18vw;
             height: auto;
             object-fit: cover;
         }
@@ -306,7 +306,7 @@
             left: 3vw;
             top: 48vh;
             opacity: 0;
-            filter: blur(1px);
+            filter: blur(3px);
             transition: 1.5s ease;
             width: 20vw;
         }
@@ -356,7 +356,7 @@
             right: 0vw;
             opacity: 0;
             top: 88vh;
-            filter: blur(1px);
+            filter: blur(3px);
             transition: 1.5s ease;
             width: 35vw;
         }
@@ -376,16 +376,17 @@
             filter: blur(1px);
             width: 30vw;
         }
+        .bg-img {
+                filter: blur(3px);
+                opacity: 0.6;
+            }
         /* 跳出視窗:網頁設計說明 */
         
         .modal-content {
             background-color: rgb(255, 237, 214);
             border-radius: 10px;
         }
-        .bg-img {
-                filter: blur(3px);
-                opacity: 0.6;
-            }
+        
         
         @media only screen and (max-width:1200px) {
             .link {
@@ -410,7 +411,7 @@
                 height: 70vh;
             }
             .logo {
-                width: 15vw;
+                width: 16vw;
             }
             .middle {
                 height: 48vh;
@@ -471,7 +472,7 @@
                 margin-left: 1.5vw;
             }
             .logo {
-                width: 25vw;
+                width: 35vw;
             }
             .d-flex button {
                 width: 12vw;
@@ -527,7 +528,7 @@
                 padding-bottom: 1vh;
             }
             .logo {
-                width: 30vw;
+                width: 42vw;
             }
             .banner .bg {
                 height: 80vh;
@@ -601,9 +602,9 @@
 <body>
     <!-- 背景圖片 -->
     <img src="../YongSheng.github.io/images/首頁背景1.png" alt="" class="bg-img-1 bg-img">
-    <img src="../YongSheng.github.io/images/首頁背景6.png" alt="" class="bg-img-6 bg-img">
+    <img src="../YongSheng.github.io/images/首頁背景6.png" alt="" class="bg-img-6">
     <img src="../YongSheng.github.io/images/首頁背景2.png" alt="" class="bg-img-2 bg-img">
-    <img src="../YongSheng.github.io/images/首頁背景8.png" alt="" class="bg-img-8 bg-img">
+    <img src="../YongSheng.github.io/images/首頁背景8.png" alt="" class="bg-img-8">
     <img src="../YongSheng.github.io/images/首頁背景7.png" alt="" class="bg-img-7 bg-img">
     <img src="../YongSheng.github.io/images/首頁背景5.png" alt="" class="bg-img-5 bg-img">
     <img src="../YongSheng.github.io/images/首頁背景9.png" alt="" class="bg-img-9 bg-img">
@@ -617,11 +618,11 @@
                 if (scroHei > 150) {
                     $(".bg-img-8").css({
                         right: "0vw",
-                        opacity: "1",
+                        opacity: "0.6",
                     })
                     $(".bg-img-6").css({
                         top: "88vh",
-                        opacity: "1",
+                        opacity: "0.6",
                     })
                 }
             });
