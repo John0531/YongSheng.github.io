@@ -9,7 +9,7 @@
 body {
     overflow-x: hidden;
 }
-/* 首頁banner */
+//? 首頁banner */
 
 .banner {
     position: relative;
@@ -50,7 +50,7 @@ body {
     }
 }
 
-/* 橫幅廣告 */
+//? 橫幅廣告 */
 
 .bannervideo {
     position: fixed;
@@ -81,7 +81,7 @@ body {
     }
 }
 
-/* 導覽列 */
+//? 導覽列 */
 
 .logo {
     width: 18vw;
@@ -152,7 +152,7 @@ body {
 }
 
 
-/* 中間區塊圖文 */
+//? 中間區塊圖文 */
 
 .middle {
     width: 50vw;
@@ -266,7 +266,7 @@ body {
     }
 }
 
-/* 背景圖片 */
+//? 背景圖片 */
 
 .bg-img-6 {
     position: absolute;
@@ -560,7 +560,7 @@ body {
     
 }
 
-/* 作者介紹 */
+//? 作者介紹 */
 .wrap-1 {
     background-image: url(../images/作者介紹背景.jpg);
     height: 75vh;
@@ -690,7 +690,7 @@ body {
     }
 }
 
-/* 選擇屬於自己的飲食方法 */
+//? 選擇屬於自己的飲食方法 */
 .wrap {
     width: 100%;
     height: 100vh;
@@ -817,7 +817,7 @@ body {
     }
 }
 
-/* 卡片-最新熱門食譜分享 */
+//? 卡片-最新熱門食譜分享 */
 .wrap1 {
     background-image: url(../images/作者介紹背景.jpg);
     height: 120vh;
@@ -921,7 +921,7 @@ body {
     }
 }
 
-/* 幻燈片-最新減脂資訊 */
+//? 幻燈片-最新減脂資訊 */
 .wrap2 {
     position: relative;
     width: 100%;
@@ -973,7 +973,7 @@ body {
 .footer-item {
     width: 0;
     flex-grow: 1;
-    /* 將flex區塊版面佔滿 */
+    //* 將flex區塊版面佔滿 */
     margin-right: 20px;
     h4 {
         font-size: 24px;
