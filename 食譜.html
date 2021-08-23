@@ -1,457 +1,716 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css"
+    />
     <title>食譜總覽</title>
     <script src="https://unpkg.com/vue@next"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            list-style: none;
-            font-family: 'Noto Sans TC', sans-serif;
-            font-weight: 700;
-        }
-        
-        .navbar {
-            position: absolute;
-            z-index: 2;
-            border-radius: 0 20px 20px 0;
-            opacity: 0.9;
-            box-shadow: 5px 5px 10px #8a7256;
-            width: 88vw;
-            height: 13vh;
-            top: -13vh
-        }
-        /* .collapse {
+      * {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        font-family: "Noto Sans TC", sans-serif;
+        font-weight: 700;
+      }
+
+      .navbar {
+        position: absolute;
+        z-index: 2;
+        border-radius: 0 20px 20px 0;
+        opacity: 0.9;
+        box-shadow: 5px 5px 10px #8a7256;
+        width: 88vw;
+        height: 13vh;
+        top: -13vh;
+      }
+      /* .collapse {
             font-size: 3vh;
         } */
-        
-        .collapse {
-            background-color: #f2e2cede;
-            border-radius: 10px;
-        }
-        
-        .link {
-            color: rgb(77, 77, 77);
-            margin: 0 2.3vw;
-            text-decoration: none;
-            display: block;
-            white-space: nowrap;
-            font-size: 3vh;
-        }
-        
-        .link:hover {
-            color: #fff;
-        }
-        
-        .d-flex {
-            margin-left: 2.5vw;
-        }
-        
-        .diet-menu {
-            z-index: 0;
-            background-color: #f2e2cede;
-            width: 14vw;
-            height: 28vh;
-            border-radius: 10px;
-            padding: 0;
-            box-shadow: 0px 0px 10px rgb(70, 69, 69);
-            opacity: 1;
-        }
-        
-        .diet-menu a:hover {
-            background-color: rgba(255, 255, 255, 0.795);
-            color: #000;
-        }
-        
-        .diet-menu a {
-            text-decoration: none;
-            display: block;
-            color: rgba(59, 59, 59, 0.712);
-            font-size: 1.4vw;
-            text-shadow: 1px 1px 1px rgb(117, 117, 117);
-            border-radius: 10px;
-            text-align: center;
-            height: 7vh;
-            padding-top: 1vh;
-        }
-        
-        .logo {
-            width: 18vw;
-            height: auto;
-            object-fit: cover;
-        }
-        
-        .banner {
-            width: 100%;
-            height: 600px;
-            background: linear-gradient(30deg, rgb(255, 208, 106) 30%, transparent 70%) center center / 100% 100%, url("./images/recipe/食譜banner.jpg") center center / 100% 100% no-repeat;
-        }
-        
-        .banner .container {
-            width: 100%;
-            height: 100%;
-            max-width: 1300px;
-            margin: auto;
-        }
-        
-        .banner-txt {
-            display: flex;
-            padding-top: 20vh;
-            flex-direction: column;
-            /* 垂直排列 */
-            justify-content: center;
-            /* 垂直置中 */
-            align-items: flex-start;
-            /* 讓線條不填滿版面 */
-        }
-        
-        .banner-txt h1 {
-            font-size: 5vw;
-            border-bottom: 2px solid #333;
-            font-weight: 900;
-            padding-bottom: 0.3em;
-            margin-bottom: 0.3em;
-        }
-        
-        .banner-txt h1 small {
-            display: block;
-            /* 文字換行 */
-            font-size: 3.5vw;
-            font-weight: 700;
-        }
-        
-        .banner-txt h2 {
-            font-size: 2.5vw;
-            font-weight: 600;
-        }
-        
-        .banner-txt p {
-            font-size: 1.5vw;
-            font-weight: 500;
-        }
-        
-        .card a {
-            text-decoration: none;
-            color: #000;
-        }
-        
-        .card-text {
-            height: 10vh;
-            overflow: hidden;
-        }
-        
-        .card-img-top {
-            height: 35vh;
-        }
-        
-        .form-select {
-            width: 45%;
-            border-radius: 15px;
-        }
-        
-        .wrap .container {
-            padding-top: 8vh;
-        }
-        
-        .wrap {
-            background-image: url(./images/作者介紹背景.jpg);
-            padding-bottom: 8vh;
-        }
-        
-        .fade-enter-from,
-        .fade-leave-to {
-            opacity: 0;
-            transform: translateY(-50%);
-        }
-        
-        .fade-enter-active,
-        .fade-leave-active {
-            transition: all 1.5s;
-        }
-    </style>
-</head>
 
-<body>
-    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #f2e2ce;">
-        <div class="container-fluid px-5">
-            <a class="navbar-brand" href="#"><img src="images/logo-已修復.gif" alt="" class="logo"></a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
+      .collapse {
+        background-color: #f2e2cede;
+        border-radius: 10px;
+      }
+
+      .link {
+        color: rgb(77, 77, 77);
+        margin: 0 2.3vw;
+        text-decoration: none;
+        display: block;
+        white-space: nowrap;
+        font-size: 3vh;
+      }
+
+      .link:hover {
+        color: #fff;
+      }
+
+      .d-flex {
+        margin-left: 2.5vw;
+      }
+
+      .diet-menu {
+        z-index: 0;
+        background-color: #f2e2cede;
+        width: 14vw;
+        height: 28vh;
+        border-radius: 10px;
+        padding: 0;
+        box-shadow: 0px 0px 10px rgb(70, 69, 69);
+        opacity: 1;
+      }
+
+      .diet-menu a:hover {
+        background-color: rgba(255, 255, 255, 0.795);
+        color: #000;
+      }
+
+      .diet-menu a {
+        text-decoration: none;
+        display: block;
+        color: rgba(59, 59, 59, 0.712);
+        font-size: 1.4vw;
+        text-shadow: 1px 1px 1px rgb(117, 117, 117);
+        border-radius: 10px;
+        text-align: center;
+        height: 7vh;
+        padding-top: 1vh;
+      }
+
+      .logo {
+        width: 18vw;
+        height: auto;
+        object-fit: cover;
+      }
+
+      .banner {
+        width: 100%;
+        height: 600px;
+        background: linear-gradient(
+              30deg,
+              rgb(255, 208, 106) 30%,
+              transparent 70%
+            )
+            center center / 100% 100%,
+          url("./images/recipe/食譜banner.jpg") center center / 100% 100%
+            no-repeat;
+      }
+
+      .banner .container {
+        width: 100%;
+        height: 100%;
+        max-width: 1300px;
+        margin: auto;
+      }
+
+      .banner-txt {
+        display: flex;
+        padding-top: 20vh;
+        flex-direction: column;
+        /* 垂直排列 */
+        justify-content: center;
+        /* 垂直置中 */
+        align-items: flex-start;
+        /* 讓線條不填滿版面 */
+      }
+
+      .banner-txt h1 {
+        font-size: 5vw;
+        border-bottom: 2px solid #333;
+        font-weight: 900;
+        padding-bottom: 0.3em;
+        margin-bottom: 0.3em;
+      }
+
+      .banner-txt h1 small {
+        display: block;
+        /* 文字換行 */
+        font-size: 3.5vw;
+        font-weight: 700;
+      }
+
+      .banner-txt h2 {
+        font-size: 2.5vw;
+        font-weight: 600;
+      }
+
+      .banner-txt p {
+        font-size: 1.5vw;
+        font-weight: 500;
+      }
+
+      .card a {
+        text-decoration: none;
+        color: #000;
+      }
+
+      .card-text {
+        height: 10vh;
+        overflow: hidden;
+      }
+
+      .card-img-top {
+        height: 35vh;
+      }
+
+      .form-select {
+        width: 45%;
+        border-radius: 15px;
+      }
+
+      .wrap .container {
+        padding-top: 8vh;
+      }
+
+      .wrap {
+        background-image: url(./images/作者介紹背景.jpg);
+        padding-bottom: 8vh;
+      }
+
+      .fade-enter-from,
+      .fade-leave-to {
+        opacity: 0;
+        transform: translateY(-50%);
+      }
+
+      .fade-enter-active,
+      .fade-leave-active {
+        transition: all 1.5s;
+      }
+      @media only screen and (max-width: 1200px) {
+        .link {
+          margin-left: 0.2vw;
+          font-size: 2vw;
+          width: auto;
+          white-space: nowrap;
+        }
+        .d-flex {
+          margin-left: 0vw;
+          width: 20vw;
+          height: 6vh;
+        }
+        .d-flex button {
+          width: 8vw;
+          font-size: 1.2vw;
+          text-align: center;
+          padding: 0.5vh 0.5vw;
+          font-size: 2vh;
+        }
+        .banner .bg {
+          height: 70vh;
+        }
+        .logo {
+          width: 16vw;
+        }
+        .middle {
+          height: 48vh;
+        }
+        .middle img {
+          height: 37vh;
+          margin-top: 2.5vh;
+        }
+        .middle .container {
+          height: 43vh;
+        }
+        .middle .txt {
+          margin-top: 2.5vh;
+        }
+        .middle .txt p {
+          padding-top: 0.5vh;
+          font-size: 1.2vw;
+        }
+        .middle .txt h3 {
+          margin-bottom: 0;
+          margin-left: 0;
+          text-align: center;
+          font-size: 1.7vw;
+        }
+        .diet-menu a {
+          font-size: 2vw;
+        }
+        .back {
+          height: 43vh;
+        }
+        .next {
+          height: 3vh;
+          bottom: 1vh;
+        }
+        .go-back {
+          height: 3vh;
+          bottom: 1vh;
+        }
+      }
+
+      @media only screen and (max-width: 830px) {
+        .link {
+          margin-left: 2.5vw;
+          font-size: 4vw;
+          width: 6vw;
+          white-space: nowrap;
+        }
+        .navbar-nav {
+          margin-right: 0.5vw;
+        }
+        .d-flex {
+          width: 70vw;
+          margin-left: 1.5vw;
+          height: 6vh;
+          padding-bottom: 1vh;
+        }
+        .d-flex button {
+          width: 12vw;
+          font-size: 2vh;
+          height: 5vh;
+          font-size: 1.2vw;
+          padding: 0.5vh 0.5vw;
+        }
+        .logo {
+          width: 35vw;
+        }
+        .diet-menu {
+          margin-left: 4vw;
+        }
+        .diet-menu a {
+          font-size: 3.5vw;
+        }
+        .middle .txt {
+          margin-top: 6vh;
+        }
+        .back p {
+          font-size: 2vw;
+        }
+        .banner-txt p {
+          font-size: 2.5vw;
+        }
+        .banner-txt p h1 {
+          font-size: 3.5vw;
+        }
+        .next {
+          height: 3vh;
+          bottom: 1vh;
+          width: 10vw;
+          right: 1vw;
+        }
+        .go-back {
+          height: 3vh;
+          bottom: 1vh;
+          width: 10vw;
+          right: 1vw;
+        }
+      }
+
+      @media only screen and (max-width: 450px) {
+        .d-flex {
+          width: 60vw;
+          height: 6vh;
+          padding-bottom: 1vh;
+        }
+        .d-flex button {
+          width: 12vw;
+          font-size: 0.2vh;
+          height: 5vh;
+        }
+        .logo {
+          width: 42vw;
+        }
+        .banner .bg {
+          height: 80vh;
+          width: 100vw;
+        }
+        .middle {
+          height: 60vh;
+          width: 70vw;
+          right: 15vw;
+        }
+        .middle img {
+          margin-top: 3vh;
+          height: 50vh;
+        }
+        .middle .txt {
+          margin-left: 2vw;
+        }
+        .middle .txt h3 {
+          font-size: 2vh;
+        }
+        .middle .txt p {
+          font-size: 1.5vh;
+        }
+        .middle .container {
+          height: 55vh;
+          width: 60vw;
+        }
+        .banner-txt p {
+          left: 1vw;
+          bottom: 10vh;
+          font-size: 4vw;
+        }
+        .banner-txt p h1 {
+          font-size: 5vw;
+          right: 6vw;
+        }
+        .fix {
+          width: 100vw;
+        }
+        .banner .link {
+          font-size: 6vw;
+        }
+        .diet-menu a {
+          font-size: 5vw;
+        }
+        .back {
+          height: 55vh;
+          width: 60vw;
+        }
+        .back p {
+          font-size: 1.8vh;
+          margin-top: 2vh;
+        }
+        .next {
+          height: 3vh;
+          bottom: 1vh;
+          width: 17vw;
+          right: 2vw;
+        }
+        .go-back {
+          height: 3vh;
+          bottom: 1vh;
+          width: 17vw;
+          right: 2vw;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <nav
+      class="navbar navbar-expand-lg navbar-light"
+      style="background-color: #f2e2ce"
+    >
+      <div class="container-fluid px-5">
+        <a class="navbar-brand" href="#"
+          ><img src="images/logo-已修復.gif" alt="" class="logo"
+        /></a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="link active" aria-current="page" href="./index.html"
+                >首頁</a
+              >
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                class="link dropdown-toggle"
+                href="#"
+                role="button"
+                data-bs-toggle="dropdown"
+                >飲食方法</a
+              >
+              <ul class="diet-menu dropdown-menu">
+                <li>
+                  <a href="./間歇性斷食.html">間歇性斷食</a>
+                </li>
+                <li>
+                  <a href="./低醣飲食.html">低醣飲食</a>
+                </li>
+                <li>
+                  <a href="./生酮飲食.html">生酮飲食</a>
+                </li>
+                <li>
+                  <a href="./碳循環飲食.html">碳循環飲食</a>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="link" href="./營養素.html">營養素</a>
+            </li>
+            <li class="nav-item">
+              <a class="link" href="./食譜.html">食譜</a>
+            </li>
+            <li class="nav-item">
+              <a class="link" href="#">加入會員</a>
+            </li>
+          </ul>
+          <form class="d-flex">
+            <input
+              class="form-control me-2"
+              type="search"
+              placeholder="Search"
+              aria-label="Search"
+            />
+            <button class="btn btn-outline-success" type="submit">
+              Search
             </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="link active" aria-current="page" href="./index.html">首頁</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">飲食方法</a>
-                        <ul class="diet-menu dropdown-menu">
-                            <li>
-                                <a href="./間歇性斷食.html">間歇性斷食</a>
-                            </li>
-                            <li>
-                                <a href="./低醣飲食.html">低醣飲食</a>
-                            </li>
-                            <li>
-                                <a href="./生酮飲食.html">生酮飲食</a>
-                            </li>
-                            <li>
-                                <a href="./碳循環飲食.html">碳循環飲食</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="nav-item">
-                        <a class="link" href="./營養素.html">營養素</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="link" href="./食譜.html">食譜</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="link" href="#">加入會員</a>
-                    </li>
-                </ul>
-                <form class="d-flex">
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-success" type="submit">Search</button>
-                </form>
-            </div>
+          </form>
         </div>
+      </div>
     </nav>
     <div id="app">
-        <div class="banner">
-            <div class="container">
-                <div class="banner-txt">
-                    <h1>食譜總覽
-                        <small>
-                            減脂食譜推薦
-                        </small>
-                    </h1>
-                    <h2>各式美味食譜料理</h2>
-                    <p>想要減脂飲食法卻又不知道如何備餐嗎?
-                        <br> 這裡有多種食譜供您參考!
-                    </p>
-                    <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" v-model="input.type">
-                        <option selected>全部</option>
-                        <option>健康沙拉</option>
-                        <option>低醣料理</option>
-                        <option>高蛋白質料理</option>
-                    </select>
-                </div>
-
-            </div>
+      <div class="banner">
+        <div class="container">
+          <div class="banner-txt">
+            <h1>
+              食譜總覽
+              <small> 減脂食譜推薦 </small>
+            </h1>
+            <h2>各式美味食譜料理</h2>
+            <p>
+              想要減脂飲食法卻又不知道如何備餐嗎? <br />
+              這裡有多種食譜供您參考!
+            </p>
+            <select
+              class="form-select form-select-lg mb-3"
+              aria-label=".form-select-lg example"
+              v-model="input.type"
+            >
+              <option selected>全部</option>
+              <option>健康沙拉</option>
+              <option>低醣料理</option>
+              <option>高蛋白質料理</option>
+            </select>
+          </div>
         </div>
-        <div class="wrap">
-            <div class="container">
-                <div class="row gx-3 gy-4 row-cols-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5">
-                    <transition-group name="fade" appear>
-                        <div class="col" v-for="(item,index) in typeCard" :key="index">
-                            <div class="card">
-                                <a :href="item.link">
-                                    <img :src="item.img" class="card-img-top" alt="...">
-                                    <div class="card-body">
-                                        <h5 class="card-title">{{item.title}}</h5>
-                                        <p class="card-text">{{item.content}}</p>
-                                        <small class="text-muted">於{{item.update}}前更新</small>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-                    </transition-group>
+      </div>
+      <div class="wrap">
+        <div class="container">
+          <div
+            class="
+              row
+              gx-3
+              gy-4
+              row-cols-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5
+            "
+          >
+            <transition-group name="fade" appear>
+              <div class="col" v-for="(item,index) in typeCard" :key="index">
+                <div class="card">
+                  <a :href="item.link">
+                    <img :src="item.img" class="card-img-top" alt="..." />
+                    <div class="card-body">
+                      <h5 class="card-title">{{item.title}}</h5>
+                      <p class="card-text">{{item.content}}</p>
+                      <small class="text-muted">於{{item.update}}前更新</small>
+                    </div>
+                  </a>
                 </div>
-            </div>
+              </div>
+            </transition-group>
+          </div>
         </div>
+      </div>
     </div>
     <script>
-        $(document).ready(function() {
-            $(".navbar").animate({
-                top: "0"
-            }, 1500);
-        });
+      $(document).ready(function () {
+        $(".navbar").animate(
+          {
+            top: "0",
+          },
+          1500
+        );
+      });
     </script>
     <style>
-        .main-footer {
-            padding: 50px 0 0;
-            /* 上 左右 下 */
-            background-color: #a2af3c;
-            ;
-        }
-        
-        .main-footer .container {
-            display: flex;
-            width: 100%;
-            margin: auto;
-        }
-        
-        .footer-item {
-            width: 0;
-            flex-grow: 1;
-            /* 將flex區塊版面佔滿 */
-            margin-right: 20px;
-        }
-        
-        .footer-item h4 {
-            font-size: 24px;
-            color: #fff;
-            border-bottom: 1px dotted #fff;
-            margin-bottom: 0.5em;
-            padding-bottom: 0.5em;
-        }
-        
-        .footer-item nav {
-            display: flex;
-            flex-direction: column;
-        }
-        
-        .footer-item nav a {
-            color: #fff;
-            line-height: 1.4;
-            text-decoration: none;
-            padding: 5px 0;
-        }
-        
-        .footer-item nav a:hover {
-            color: #fa0;
-        }
-        
-        .footer-subs {
-            display: flex;
-            flex-direction: column;
-        }
-        
-        .footer-subs form {
-            display: flex;
-            width: 100%;
-            margin: auto 0;
-        }
-        
-        .footer-subs input[type="text"],
-        .footer-subs input[type="submit"] {
-            border: none;
-            padding: 5px 10px;
-        }
-        
-        .footer-subs input[type="text"] {
-            width: 0;
-            flex-grow: 1;
-        }
-        
-        .footer-subs input[type="submit"] {
-            color: #d6ffbb;
-            background-color: #66720e;
-        }
-        
-        .copyright {
-            width: 100%;
-            text-align: center;
-            margin: 50px 0 0;
-            padding: 10px 0;
-            background-color: #66720e;
-            color: #d6ffbb;
-        }
+      .main-footer {
+        padding: 50px 0 0;
+        /* 上 左右 下 */
+        background-color: #a2af3c;
+      }
+
+      .main-footer .container {
+        display: flex;
+        width: 100%;
+        margin: auto;
+      }
+
+      .footer-item {
+        width: 0;
+        flex-grow: 1;
+        /* 將flex區塊版面佔滿 */
+        margin-right: 20px;
+      }
+
+      .footer-item h4 {
+        font-size: 24px;
+        color: #fff;
+        border-bottom: 1px dotted #fff;
+        margin-bottom: 0.5em;
+        padding-bottom: 0.5em;
+      }
+
+      .footer-item nav {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .footer-item nav a {
+        color: #fff;
+        line-height: 1.4;
+        text-decoration: none;
+        padding: 5px 0;
+      }
+
+      .footer-item nav a:hover {
+        color: #fa0;
+      }
+
+      .footer-subs {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .footer-subs form {
+        display: flex;
+        width: 100%;
+        margin: auto 0;
+      }
+
+      .footer-subs input[type="text"],
+      .footer-subs input[type="submit"] {
+        border: none;
+        padding: 5px 10px;
+      }
+
+      .footer-subs input[type="text"] {
+        width: 0;
+        flex-grow: 1;
+      }
+
+      .footer-subs input[type="submit"] {
+        color: #d6ffbb;
+        background-color: #66720e;
+      }
+
+      .copyright {
+        width: 100%;
+        text-align: center;
+        margin: 50px 0 0;
+        padding: 10px 0;
+        background-color: #66720e;
+        color: #d6ffbb;
+      }
     </style>
     <div class="main-footer">
-        <div class="container">
-            <div class="footer-item">
-                <h4>關於減脂</h4>
-                <nav>
-                    <a href="#"><i class="fas fa-biking"></i> 食譜分享</a>
-                    <a href="#"><i class="fas fa-biking"></i> 減脂運動</a>
-                    <a href="#"><i class="fas fa-biking"></i> 減脂飲食</a>
-                </nav>
-            </div>
-            <div class="footer-item">
-                <h4>飲食文章列表</h4>
-                <nav>
-                    <a href="#"><i class="fas fa-biking"></i> 低醣飲食</a>
-                    <a href="#"><i class="fas fa-biking"></i> 生酮飲食</a>
-                    <a href="#"><i class="fas fa-biking"></i> 碳循環飲食</a>
-                    <a href="#"><i class="fas fa-biking"></i> 間歇性斷食</a>
-                </nav>
-            </div>
-            <div class="footer-item">
-                <h4>服務項目</h4>
-                <nav>
-                    <a href="#"><i class="fas fa-biking"></i> 飲食諮詢</a>
-                    <a href="#"><i class="fas fa-biking"></i> 常見問題</a>
-                    <a href="#"><i class="fas fa-biking"></i> 聯絡我們</a>
-                </nav>
-            </div>
-            <div class="footer-item footer-subs">
-                <h4>訂閱電子報</h4>
-                <form action="">
-                    <input type="text">
-                    <!-- 輸入區 -->
-                    <input type="submit" value="訂閱">
-                    <!-- 提交按鈕 -->
-                </form>
-                <!-- 表單 -->
-            </div>
+      <div class="container">
+        <div class="footer-item">
+          <h4>關於減脂</h4>
+          <nav>
+            <a href="#"><i class="fas fa-biking"></i> 食譜分享</a>
+            <a href="#"><i class="fas fa-biking"></i> 減脂運動</a>
+            <a href="#"><i class="fas fa-biking"></i> 減脂飲食</a>
+          </nav>
         </div>
-        <div class="copyright">
-            COPYRIGHT &copy; 2021 FAT-REDUCING DIET GUIDE
+        <div class="footer-item">
+          <h4>飲食文章列表</h4>
+          <nav>
+            <a href="#"><i class="fas fa-biking"></i> 低醣飲食</a>
+            <a href="#"><i class="fas fa-biking"></i> 生酮飲食</a>
+            <a href="#"><i class="fas fa-biking"></i> 碳循環飲食</a>
+            <a href="#"><i class="fas fa-biking"></i> 間歇性斷食</a>
+          </nav>
         </div>
+        <div class="footer-item">
+          <h4>服務項目</h4>
+          <nav>
+            <a href="#"><i class="fas fa-biking"></i> 飲食諮詢</a>
+            <a href="#"><i class="fas fa-biking"></i> 常見問題</a>
+            <a href="#"><i class="fas fa-biking"></i> 聯絡我們</a>
+          </nav>
+        </div>
+        <div class="footer-item footer-subs">
+          <h4>訂閱電子報</h4>
+          <form action="">
+            <input type="text" />
+            <!-- 輸入區 -->
+            <input type="submit" value="訂閱" />
+            <!-- 提交按鈕 -->
+          </form>
+          <!-- 表單 -->
+        </div>
+      </div>
+      <div class="copyright">COPYRIGHT &copy; 2021 FAT-REDUCING DIET GUIDE</div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script>
-        Vue.createApp({
-            data() {
-                return {
-                    text: "hello world",
-                    input: {
-                        type: "全部"
-                    },
-                    card: []
-                };
+      Vue.createApp({
+        data() {
+          return {
+            text: "hello world",
+            input: {
+              type: "全部",
             },
-            methods: {
-
-            },
-            computed: {
-                typeCard() {
-                    if (this.input.type === "全部") {
-                        return this.card
-                    } else {
-                        return this.card.filter(item => {
-                            return item.type === this.input.type
-                        })
-                    }
-                }
-            },
-
-            mounted() {
-                axios.get("https://tranquil-coast-28128.herokuapp.com/card")
-                    .then((res) => {
-                        console.log(res)
-                        this.card = res.data
-                    }).catch((err) => {
-                        console.log(err)
-                    })
+            card: [],
+          };
+        },
+        methods: {},
+        computed: {
+          typeCard() {
+            if (this.input.type === "全部") {
+              return this.card;
+            } else {
+              return this.card.filter((item) => {
+                return item.type === this.input.type;
+              });
             }
-        }).mount("#app");
+          },
+        },
+
+        mounted() {
+          axios
+            .get("https://tranquil-coast-28128.herokuapp.com/card")
+            .then((res) => {
+              console.log(res);
+              this.card = res.data;
+            })
+            .catch((err) => {
+              console.log(err);
+            });
+        },
+      }).mount("#app");
     </script>
     <!-- Optional JavaScript; choose one of the two! -->
 
     <!-- Option 1: Bootstrap Bundle with Popper -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
 
     <!-- Option 2: Separate Popper and Bootstrap JS -->
     <!--
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
         -->
-</body>
-
+  </body>
 </html>
